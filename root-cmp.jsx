@@ -17,6 +17,9 @@ export function App() {
 
         <Switch>
             <Route path="/about" component={About} />
+            <Route path="/about" component={About} />
+            <Route path="/about" component={About} />
+            <Route path="/about" component={About} />
             <Route path="/" component={Home} />
         </Switch>
 
