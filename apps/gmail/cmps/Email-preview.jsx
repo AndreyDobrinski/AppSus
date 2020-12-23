@@ -1,8 +1,14 @@
-export function EmailPreview ({email}){
+export function EmailPreview ({email , onEmailPreview , onEmailDelete}){
 
     return (
         <div className="email-preview">
-           Email from : {email.title}
+            <h1 className="email-subject">
+                {email.subject}
+                <div>
+                    <button className="email-viewfull" onClick={()=>onEmailPreview(email)}>+</button>
+                    <button className="email-delete" onClick={()=>onEmailDelete(email)}>X</button>
+                </div>
+            </h1>
         </div>
     )
 

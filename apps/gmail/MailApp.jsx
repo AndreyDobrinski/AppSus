@@ -1,6 +1,7 @@
 import { AppHeader } from '../../cmps/App-header.jsx'
 import { MailService } from '../gmail/services/mail-service.js'
 import { EmailList } from '../gmail/cmps/Email-list.jsx'
+import { EmailOptions } from '../gmail/cmps/Email-options.jsx'
 
 
 export class MailApp extends React.Component {
@@ -8,8 +9,10 @@ export class MailApp extends React.Component {
     state = {
         emails:[],
         filterBy:{
-            title:''
+            subject:''
         },
+        selectedEmail:null,
+
 
     }
 
@@ -31,11 +34,38 @@ export class MailApp extends React.Component {
     getEmailsForDisplay = () =>{
         const {filterBy} = this.state
         return this.state.emails.filter((email) =>{
-            return email.title.toLowerCase().includes(filterBy.title.toLowerCase())
+            return email.subject.toLowerCase().includes(filterBy.subject.toLowerCase())
+        })
+
+    }
+    onEmailPreview = (email) =>{
+        console.log('email:' , email);
+        this.setState({
+            selectedEmail : email
         })
 
     }
 
+
+    onEmailDelete = (email) =>{
+        console.log('deliting email' , email);
+        var areUSure = confirm('Are you sure that you want to delete this Email?')
+        if(areUSure){
+            var copyEmail = MailService.deleteEmail(email.id)
+            // console.log(copyEmail);
+            this.setState({
+                emails : copyEmail
+            })
+        }
+        else return
+    }
+
+
+    onCloseModal = () =>{
+        this.setState({
+            selectedEmail :null
+          })
+    }
 
 
 
@@ -44,12 +74,31 @@ export class MailApp extends React.Component {
             <section>
 
                 <AppHeader />
-                MailApp
-                <section>
-                    <EmailList emails={this.getEmailsForDisplay()}/>
-
+                <section className="email-container">
+                    
+                        <EmailOptions/>
+                    <div className="email-list-container">
+                        <EmailList emails={this.getEmailsForDisplay()} onEmailPreview={this.onEmailPreview} onEmailDelete={this.onEmailDelete}/>
+                    </div>
 
                 </section>
+
+                {this.state.selectedEmail && <div className="modal">
+                    <div className="modal-content">
+
+                    <div className="modal-header">
+                        <span className="close" onClick={()=>this.onCloseModal()}>&times;</span>
+                        <h2>Subject: {this.state.selectedEmail.subject}</h2>
+                    </div>
+
+
+                    <div className="modal-body">
+                        <p><span>Description:</span> {this.state.selectedEmail.body}</p>
+                    </div>
+
+
+                    </div>
+                    </div>}
 
             </section>
         )
