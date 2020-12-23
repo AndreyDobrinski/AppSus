@@ -5,6 +5,7 @@ import {storageService} from '../../../services/storageService.js'
 export const MailService = {
     query,
     deleteEmail,
+    // addEmail,
 }
 var KEY = 'emailDB'
 var gEmails;
@@ -54,6 +55,18 @@ function _getDemoEmails(){
     return defaultEmails
 }
 
+
+// function addEmail(email){
+
+//     const newEmail = {
+//         id : util.makeid(),
+//         subject : email.subject,
+//         body: email.body
+//     }
+//     gEmails.unshift(newEmail)
+//     return gEmails
+
+// }
 
 function deleteEmail(emailId){
     gEmails = gEmails.filter(email =>{

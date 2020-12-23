@@ -95,8 +95,17 @@ export class MailApp extends React.Component {
             comeposClicked : false
         })
 
+    }
+
+    onInputChange = (ev) =>{
+        const value = ev.target.value
+        console.log(value);
 
 
+
+        // this.setState({
+        //     emails: {...this.state.emails , [ev.target.name] : value}
+        // })
     }
 
 
@@ -138,11 +147,11 @@ export class MailApp extends React.Component {
 
                         <div className="modal-header-comepos">
                             <span className="close-compose" onClick={()=>this.onCloseModal()}>&times;</span>
-                            <input type="text" placeholder="Subject" className="modal-compose-subject"/>
+                            <input name="subject" type="text" placeholder="Subject" className="modal-compose-subject" onChange={this.onInputChange}/>
                         </div>
 
                         <div className="modal-body-compose">
-                            <textarea name="" id="" className="modal-compose-body" placeholder="Text goes here"></textarea>
+                            <textarea name="body" id="" className="modal-compose-body" placeholder="Text goes here" onChange={this.onInputChange}></textarea>
 
 
                         </div>

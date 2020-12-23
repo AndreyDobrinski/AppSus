@@ -1,4 +1,61 @@
 
+/* FONTS  */
+@font-face{
+  font-family: fas;
+  src: url(../../../assets/fonts/font-awesome/fa-solid-900.ttf);
+}
+
+@font-face{
+  font-family: marck;
+  src: url(../../../assets/fonts/font-text/MarckScript-Regular.ttf);
+}
+
+
+
+
+
+/* BUTTONS  */
+.fas{
+  font-family: fas;
+  font-size: larger;
+  background-color: inherit;
+  border: none;
+  outline: none;
+}
+
+
+.fas.star::before{
+  content: "";
+}
+.fas.star{
+  color: white;
+}
+.fas.star:hover{
+  color: rgb(245 211 43);
+  cursor: pointer;
+}
+
+
+
+.fas.viewfull::before{
+  content: "" ;
+}
+.fas.viewfull:hover{
+  color: #025f70;
+  cursor: pointer;
+}
+
+
+
+.fas.delete::before{
+  content: "";
+}
+.fas.delete:hover{
+  color: #025f70;
+  cursor: pointer;
+}
+
+
 
 /* EMAIL HTML  */
 .email-container{
@@ -19,6 +76,8 @@
 .email-options-container{
   /* background-color: blueviolet; */
   background-color: white;
+  /* font-family: marck; */
+
 
   
 }
@@ -27,6 +86,11 @@
   padding: 10px;
   margin: 20px 20px 10px 20px;
   width: 100px;
+  border: none;
+  font-family: marck;
+  font-weight: 900;
+  font-size: 1em;
+
 }
 
 .btn:hover{
