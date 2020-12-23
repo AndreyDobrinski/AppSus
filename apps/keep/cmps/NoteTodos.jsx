@@ -1,8 +1,8 @@
 export function NoteTodos ({ info}) {
-    return <label>
+    return <div className="note">
         {info.label}
-        {/* {info.todos.map(todo => {
-            return <li>{todo.txt}</li>
-        })} */}
-    </label>
+        {info.todos.map(todo => {
+            return <li key={todo.id}>{todo.txt}</li>
+        })}
+    </div>
 }

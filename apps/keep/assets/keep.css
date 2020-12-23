@@ -3,3 +3,22 @@
 .keep-header{
     background: aqua;
 }
+
+.notes {
+    width: 90vw;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    /* grid-template-rows: repeat(auto-fill, minmax(250px, 1fr)); */
+    grid-auto-rows: 250px;
+    gap: 40px;
+}
+.note {
+    background-color: cornflowerblue;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.note img {
+    width: 100px;
+}
