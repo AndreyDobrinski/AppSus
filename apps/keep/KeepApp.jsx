@@ -6,7 +6,7 @@ export class KeepApp extends React.Component {
         return (
             <section>
                 <AppHeader />
-                KeepApp
+                <h1 className="keep-header">Keep</h1>
             </section>
         )
     }

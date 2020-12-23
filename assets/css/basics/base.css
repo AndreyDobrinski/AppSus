@@ -1,0 +1,20 @@
+
+body {
+    background-color: lightblue;
+    margin: 0;
+  }
+  
+  header {
+    background-color: lightskyblue;
+    padding: 5px;
+  }
+  
+  li {
+    list-style-type: none;
+  }
+  
+  a {
+    text-decoration: none;
+    color: black;
+  }
+  
