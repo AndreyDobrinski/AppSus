@@ -1,7 +1,7 @@
-export function NoteImg({ info}) {
+export function NoteImg({ note}) {
     return <div className="note">
-         {info.title}
-        <img src={`${info.url}`} alt=""/>
+         {note.info.title}
+        <img src={`${note.info.url}`} alt=""/>
        
         {/* <input type="range" max={info.max} onChange={(ev) => {
             onAns(+ev.target.value)

@@ -3,14 +3,14 @@ import { NoteImg } from './NoteImg.jsx'
 import { NoteTodos } from './NoteTodos.jsx'
 
 
-export function DynamicKeepCmp({ currNote, info }) {
-    switch (currNote) {
+export function DynamicKeepCmp({ note, onUpdateNote }) {
+    switch (note.type) {
         case 'NoteText':
-            return <NoteText info={info} />
+            return <NoteText note={note} onUpdateNote = {onUpdateNote}/>
         case 'NoteImg':
-            return <NoteImg info={info} />
+            return <NoteImg note={note} onUpdateNote = {onUpdateNote}/>
         case 'NoteTodos':
-            return <NoteTodos info={info} />
+            return <NoteTodos note={note} onUpdateNote = {onUpdateNote}/>
     }
     return <p>UNKNWON</p>
 }
