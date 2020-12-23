@@ -1,6 +1,7 @@
 import { AppHeader } from '../../cmps/App-header.jsx'
 import { keepService } from './services/keepService.js'
 import { DynamicKeepCmp } from './cmps/DynamicKeepCmp.jsx'
+import { NoteCreation } from './cmps/NoteCreation.jsx'
 
 
 export class KeepApp extends React.Component {
@@ -21,20 +22,28 @@ export class KeepApp extends React.Component {
             .then(notes => this.setState({ notes, answers: new Array(notes.length) }))
     }
 
+    onAddNote = (note) => {
+        console.log('AddingNote', note)
+        keepService.addNote(note)
+            .then(() => this.loadNotes())
+    }
+
 
     render() {
         const { notes } = this.state
-        console.log('notes', this.state.notes)
         if (!notes) return <section></section>
         return (
             <section>
                 <AppHeader />
+                {/* <NoteCreation onAddNote={(note) => { this.onAddNote(note) }} /> */}
+                <NoteCreation onAddNote={this.onAddNote} />
                 <h1 className="keep-header">Keep</h1>
-                {notes.map((note, idx) => {
-                    return <div key={idx}>
-                        <DynamicKeepCmp currNote={note.type} info={note.info} />
-                    </div>
-                })}
+                <div className="notes">
+                    {notes.map((note, idx) => {
+                        return <DynamicKeepCmp key={idx} currNote={note.type} info={note.info} />
+                        // return <DynamicKeepCmp key={idx} note={note} />
+                    })}
+                </div>
             </section>
         )
     }
