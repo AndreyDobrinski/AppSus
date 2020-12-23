@@ -1,6 +1,6 @@
 import {Home} from './pages/Home.jsx'
 import {About} from './pages/About.jsx'
-import {MailApp} from './apps/mail/MailApp.jsx'
+import {MailApp} from './apps/gmail/MailApp.jsx'
 import {KeepApp} from './apps/keep/KeepApp.jsx'
 
 
