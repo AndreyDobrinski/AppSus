@@ -1,7 +1,7 @@
-export function NoteTodos ({ info}) {
+export function NoteTodos ({ note}) {
     return <div className="note">
-        {info.label}
-        {info.todos.map(todo => {
+        {note.info.label}
+        {note.info.todos.map(todo => {
             return <li key={todo.id}>{todo.txt}</li>
         })}
     </div>

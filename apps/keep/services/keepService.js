@@ -1,8 +1,10 @@
-import {util} from '../../../services/util.js'
+import { util } from '../../../services/util.js'
 
 export const keepService = {
     query,
-    addNote
+    addNote,
+    updNote,
+    getNoteById
 };
 
 
@@ -30,8 +32,8 @@ var notes = [
         info: {
             label: "How was it:",
             todos: [
-                { txt: "Do that", doneAt: null, id:util.makeid() },//
-                { txt: "Do this", doneAt: 187111111, id:util.makeid() }//
+                { txt: "Do that", doneAt: null, id: util.makeid() },//
+                { txt: "Do this", doneAt: 187111111, id: util.makeid() }//
             ]
         }
     }
@@ -45,7 +47,7 @@ function query() {
 }
 
 function addNote(note) {
-    var noteToAdd 
+    var noteToAdd
     if (note.type === 'NoteText') {
         noteToAdd = { ...note }
     }
@@ -55,11 +57,11 @@ function addNote(note) {
             backgroundColor: "#00d"
         }
         noteToAdd.info.title = ''
-    } 
-    if(note.type === 'NoteTodos') {
+    }
+    if (note.type === 'NoteTodos') {
         noteToAdd = { ...note }
-        noteToAdd.info.label= "How was it:"
-        noteToAdd.info.todos.forEach(todo =>{
+        noteToAdd.info.label = "How was it:"
+        noteToAdd.info.todos.forEach(todo => {
             todo.id = util.makeid()
         })
         console.log('noteToAdd', noteToAdd)
@@ -67,4 +69,19 @@ function addNote(note) {
     notes = [noteToAdd, ...notes];
     window.notes = notes//debug
     return Promise.resolve(notes);
+}
+
+function updNote(idx, note) {
+    // var noteToUpd = {...notes[idx]}
+    // noteToUpd = note
+    // notes = 
+    getNoteById(idx)
+        .then(res => {
+            res = note
+        })
+        window.notes = notes//debug
+    return Promise.resolve(notes[idx]);
+}
+function getNoteById(id) {
+    return Promise.resolve(notes[id]);
 }

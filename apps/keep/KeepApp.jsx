@@ -27,7 +27,11 @@ export class KeepApp extends React.Component {
         keepService.addNote(note)
             .then(() => this.loadNotes())
     }
-
+    onUpdateNote = (idx, note) => {
+        console.log('UpdatingNote', note)
+        keepService.updNote(idx, note)
+            .then(() => this.loadNotes())
+    }
 
     render() {
         const { notes } = this.state
@@ -40,8 +44,8 @@ export class KeepApp extends React.Component {
                 <h1 className="keep-header">Keep</h1>
                 <div className="notes">
                     {notes.map((note, idx) => {
-                        return <DynamicKeepCmp key={idx} currNote={note.type} info={note.info} />
-                        // return <DynamicKeepCmp key={idx} note={note} />
+                        // return <DynamicKeepCmp key={idx} currNote={note.type} info={note.info} />
+                        return <DynamicKeepCmp key={idx} note={note} onUpdateNote={(res) => this.onUpdateNote(idx, res)} />
                     })}
                 </div>
             </section>
