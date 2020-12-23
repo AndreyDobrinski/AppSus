@@ -17,7 +17,7 @@ export class KeepApp extends React.Component {
 
     loadNotes() {
         keepService.query()
-            .then(notes => this.setState({ notes , answers: new Array(this.state.notes.length) }))
+            .then(notes => this.setState({ notes:notes , answers: new Array(notes.length) }))
     }
 
 
