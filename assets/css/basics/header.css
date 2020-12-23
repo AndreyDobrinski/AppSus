@@ -1,0 +1,28 @@
+
+.navigation-links-header {
+    background-color: #888;
+    padding: 10px;
+    display: flex;
+    font-size: larger;
+    /* margin: 0 auto; */
+  }
+  
+  .navigation-links-home {
+    margin-right: 30px;
+  }
+  
+  .active {
+    color: rgb(155, 67, 67);
+  }
+  
+  
+  .app-header-home{
+    text-align: center;
+    font-size: 2em;
+    
+  }
+  .app-header-about{
+    text-align: center;
+    font-size: 2em;
+  
+  }

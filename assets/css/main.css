@@ -1,46 +1,10 @@
-body {
-  background-color: lightblue;
-  margin: 0;
-}
-
-header {
-  background-color: lightskyblue;
-  padding: 5px;
-}
-
-li {
-  list-style-type: none;
-}
-
-a {
-  text-decoration: none;
-  color: black;
-}
-
-.navigation-links-header {
-  background-color: #888;
-  padding: 10px;
-  display: flex;
-  font-size: larger;
-  /* margin: 0 auto; */
-}
-
-.navigation-links-home {
-  margin-right: 30px;
-}
-
-.active {
-  color: rgb(155, 67, 67);
-}
+/* BASE  */
+@import './basics/base.css';
+@import './basics/header.css';
 
 
-.app-header-home{
-  text-align: center;
-  font-size: 2em;
-  
-}
-.app-header-about{
-  text-align: center;
-  font-size: 2em;
+/* EMAIL */
+@import '../../apps/gmail/assets/gmail.css';
 
-}
+/* KEEP */
+@import '../../apps/keep/assets/keep.css';
