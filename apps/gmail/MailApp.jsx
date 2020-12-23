@@ -2,6 +2,7 @@ import { AppHeader } from '../../cmps/App-header.jsx'
 import { MailService } from '../gmail/services/mail-service.js'
 import { EmailList } from '../gmail/cmps/Email-list.jsx'
 import { EmailOptions } from '../gmail/cmps/Email-options.jsx'
+import { EmailFilter } from '../gmail/cmps/Email-filter.jsx'
 
 
 export class MailApp extends React.Component {
@@ -12,6 +13,7 @@ export class MailApp extends React.Component {
             subject:''
         },
         selectedEmail:null,
+        comeposClicked:false,
 
 
     }
@@ -63,10 +65,39 @@ export class MailApp extends React.Component {
 
     onCloseModal = () =>{
         this.setState({
-            selectedEmail :null
+            selectedEmail :null,
+            comeposClicked : false
           })
     }
 
+      onMakeAnEmail = () =>{
+        console.log('making email');
+
+        this.setState({
+            comeposClicked: true
+        })
+
+
+    }
+
+
+    onSetFilter = (filterBy) => {
+        console.log("filterBy", filterBy);
+        this.setState({ filterBy });
+      };
+    
+
+    onSendEmail = (ev) =>{
+        ev.preventDefault();
+        console.log('Email sent!');
+        ////// nice message of email sent goes here //////////
+        this.setState({
+            comeposClicked : false
+        })
+
+
+
+    }
 
 
     render() {
@@ -74,9 +105,10 @@ export class MailApp extends React.Component {
             <section>
 
                 <AppHeader />
+                <EmailFilter setFilter = {this.onSetFilter}/>
                 <section className="email-container">
                     
-                        <EmailOptions/>
+                        <EmailOptions onMakeAnEmail={this.onMakeAnEmail}/>
                     <div className="email-list-container">
                         <EmailList emails={this.getEmailsForDisplay()} onEmailPreview={this.onEmailPreview} onEmailDelete={this.onEmailDelete}/>
                     </div>
@@ -88,16 +120,38 @@ export class MailApp extends React.Component {
 
                     <div className="modal-header">
                         <span className="close" onClick={()=>this.onCloseModal()}>&times;</span>
-                        <h2>Subject: {this.state.selectedEmail.subject}</h2>
+                        <h2>{this.state.selectedEmail.subject}</h2>
                     </div>
 
 
                     <div className="modal-body">
-                        <p><span>Description:</span> {this.state.selectedEmail.body}</p>
+                        <p>{this.state.selectedEmail.body}</p>
                     </div>
 
 
                     </div>
+                    </div>}
+
+
+                {this.state.comeposClicked && <div className="modal">
+                    <form className="modal-content" onSubmit={this.onSendEmail}>
+
+                        <div className="modal-header-comepos">
+                            <span className="close-compose" onClick={()=>this.onCloseModal()}>&times;</span>
+                            <input type="text" placeholder="Subject" className="modal-compose-subject"/>
+                        </div>
+
+                        <div className="modal-body-compose">
+                            <textarea name="" id="" className="modal-compose-body" placeholder="Text goes here"></textarea>
+
+
+                        </div>
+                    
+                        <button type="submit">Submit</button>
+
+
+
+                    </form>
                     </div>}
 
             </section>

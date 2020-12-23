@@ -1,11 +1,12 @@
 import {util} from '../../../services/util.js'
+import {storageService} from '../../../services/storageService.js'
 
 
 export const MailService = {
     query,
     deleteEmail,
 }
-
+var KEY = 'emailDB'
 var gEmails;
 _createEmails()
 
@@ -15,7 +16,11 @@ function query (){
 }
 
 function _createEmails(){
-    gEmails = _getDemoEmails()
+    gEmails = storageService.loadFromStorge(KEY)
+    if(!gEmails || !gEmails.length){
+        gEmails = _getDemoEmails()
+        _saveEmailsToStorage()
+    }
 }
 
 
@@ -54,5 +59,11 @@ function deleteEmail(emailId){
     gEmails = gEmails.filter(email =>{
         return email.id !== emailId
     })
+    _saveEmailsToStorage()
     return gEmails
+}
+
+
+function _saveEmailsToStorage(){
+    storageService.saveToStorage(KEY,gEmails)
 }
