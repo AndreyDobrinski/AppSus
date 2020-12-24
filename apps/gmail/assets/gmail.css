@@ -4,6 +4,11 @@
   font-family: fas;
   src: url(../../../assets/fonts/font-awesome/fa-solid-900.ttf);
 }
+/* @font-face{
+  font-family: fab;
+  src: url(../../../assets/fonts/font-awesome/fa-brands-400.ttf);
+} */
+
 
 @font-face{
   font-family: marck;
@@ -11,7 +16,13 @@
 }
 
 
+/* .fab{
+  font-family: fab;
+} */
 
+/* .fab.facebook::before{
+  content: "";
+} */
 
 
 /* BUTTONS  */
