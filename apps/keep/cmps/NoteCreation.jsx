@@ -16,6 +16,7 @@ export class NoteCreation extends React.Component {
 
         if (this.state.type === "NoteText") {
             noteCopy.txt = value;
+            console.log('noteCopy.txt', noteCopy.txt)
         }
         if (this.state.type === "NoteImg") {
             noteCopy.url = value;
@@ -27,11 +28,12 @@ export class NoteCreation extends React.Component {
             })
             noteCopy.todos = res;
         }
-        this.setState({ info: noteCopy })
+        this.setState({ info: noteCopy }, ()=>{console.log('after handle', this.state)})
 
     };
 
     onAddNote = () => {
+        console.log('in noteCre to parent', this.state)
         this.props.onAddNote(this.state);
         this.setState({ info: {} })
     }
@@ -39,6 +41,7 @@ export class NoteCreation extends React.Component {
     onChangeNoteType = (ev) => {
         if (ev.target.name === "NoteText") {
             this.setState({ type: "NoteText" })
+            console.log('update type', this.state.type)
         }
         if (ev.target.name === "NoteImg") {
             this.setState({ type: "NoteImg" })

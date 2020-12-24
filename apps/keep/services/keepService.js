@@ -25,7 +25,7 @@ var notes = [
             title: "Me playing Mi"
         },
         style: {
-            backgroundColor: "#0000dd"
+            backgroundColor: "#6494ed"
         }
     },
     {
@@ -55,9 +55,9 @@ function addNote(note) {
     if (note.type === 'NoteImg') {
         noteToAdd = { ...note }
         noteToAdd.style = {
-            backgroundColor: "#00d"
+            backgroundColor: "#6494ed"
         }
-        noteToAdd.info.title = ''
+        noteToAdd.info.title = 'Enter your title'
     }
     if (note.type === 'NoteTodos') {
         noteToAdd = { ...note }

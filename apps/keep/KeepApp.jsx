@@ -18,7 +18,7 @@ export class KeepApp extends React.Component {
 
     loadNotes() {
         keepService.query()
-            .then(notes => this.setState({ notes }))
+            .then(notes => {console.log('loadNotes', notes);this.setState({ notes })})
     }
 
     onAddNote = (note) => {
@@ -45,7 +45,6 @@ export class KeepApp extends React.Component {
                 <AppHeader />
                 {/* <NoteCreation onAddNote={(note) => { this.onAddNote(note) }} /> */}
                 <NoteCreation onAddNote={this.onAddNote} />
-                <h1 className="keep-header">Keep</h1>
                 <div className="notes">
                     {notes.map((note, idx) => {
                         // return <DynamicKeepCmp key={idx} currNote={note.type} info={note.info} />

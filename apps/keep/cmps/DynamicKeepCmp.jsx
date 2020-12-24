@@ -4,6 +4,7 @@ import { NoteTodos } from './NoteTodos.jsx'
 
 
 export function DynamicKeepCmp({ note, onUpdateNote, onDeleteNote }) {
+    console.log('in DynamicKeepCmp', note)
     switch (note.type) {
         case 'NoteText':
             return <NoteText note={note} onUpdateNote={onUpdateNote} onDeleteNote={onDeleteNote} />

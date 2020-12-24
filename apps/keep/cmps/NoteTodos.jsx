@@ -4,6 +4,7 @@ export class NoteTodos extends React.Component {
     }
 
     componentDidMount() {
+        console.log('from props todos', this.props.note)
         this.setState({ note: this.props.note })
     }
 
@@ -30,30 +31,33 @@ export class NoteTodos extends React.Component {
     }
     onAddTodo = (idx) => {
         const noteCopy = { ...this.state };
-        noteCopy.note.info.todos.splice(++idx, 0, {txt:'', isDone: false})
+        noteCopy.note.info.todos.splice(++idx, 0, { txt: '', isDone: false })
         this.setState(noteCopy, () => { console.log(this.state) })
     }
 
     render() {
         if (!this.state.note) return <div></div>
         return <div className="note">
-            <input type="text" name="label" value={this.state.note.info.label} onChange={this.handleChange} />
+            <input type="text" name="label" value={this.state.note.info.label} 
+            onChange={this.handleChange} className="text-todos"/>
             <div className="todos">
                 {this.state.note.info.todos.map((todo, idx) => {
                     return (
                         <div className="todo-item">
-                            <button className="isDone" onClick={() => { this.onUpdStatus(idx) }}>o</button>
-                            <input type="text" name="todo" id={idx} value={todo.txt}
-                                onChange={this.handleChange} key={todo.id}
+                            <button className="fas check" onClick={() => { this.onUpdStatus(idx) }}></button>
+                            <input type="text" name="todo" id={todo.id} value={todo.txt}
+                                onChange={this.handleChange} key={todo.id} className="text-todo"
                                 style={todo.isDone ? { textDecoration: 'line-through' } : { textDecoration: 'none' }} />
-                            <button className="del-todo" onClick={() => { this.onDeleteTodo(idx) }}>x</button>
-                            <button className="add-todo" onClick={() => { this.onAddTodo(idx) }}>+</button>
+                            <button className="fas delete-item" onClick={() => { this.onDeleteTodo(idx) }}></button>
+                            <button className="fas add-item" onClick={() => { this.onAddTodo(idx) }}></button>
                         </div>
                     )
                 })}
             </div>
-            <button className="add-note-todos" onClick={() => { this.props.onUpdateNote(this.state.note) }}>save</button>
-            <button className="fas delete" onClick={this.props.onDeleteNote}></button>
+            <div className="todo-settings">
+                <button className="fas done" onClick={() => { this.props.onUpdateNote(this.state.note) }}></button>
+                <button className="fas delete" onClick={this.props.onDeleteNote}></button>
+            </div>
         </div>
     }
 }
