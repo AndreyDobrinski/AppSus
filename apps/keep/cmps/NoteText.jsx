@@ -19,18 +19,10 @@ export class NoteText extends React.Component {
     render() {
         if(!this.state.note) return <div></div>
         return <div className="note">
-            <textarea name="" id="" rows="10" value={this.state.note.info.txt} onChange={this.handleChange}></textarea>
-            <button className="add-note-text" onClick={()=>{this.props.onUpdateNote(this.state.note)}}>save</button>
+            <textarea className="text-text" id="" rows="10" value={this.state.note.info.txt} onChange={this.handleChange}></textarea>
+            <button className="far fa-edit" onClick={()=>{this.props.onUpdateNote(this.state.note)}}>save</button>
+            <button className="fas delete" onClick={this.props.onDeleteNote}></button>
         </div>
+        {/* className="add-note-text" */}
     }
 }
-
-// export function NoteText({ info }) {
-//     return <div className="note">
-//         <textarea name="" id="" rows="10" value={info.txt}></textarea>
-//         {/* {info.txt} */}
-//         {/* <input type="range" max={info.max} onChange={(ev) => {
-//             onAns(+ev.target.value)
-//         }} /> */}
-//     </div>
-// }

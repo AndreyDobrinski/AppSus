@@ -23,7 +23,7 @@ export class NoteCreation extends React.Component {
         if (this.state.type === "NoteTodos") {
             var todos = value.split(',')
             var res = todos.map(todo => {
-                return { txt: todo, doneAt: null }
+                return { txt: todo, isDone: false }
             })
             noteCopy.todos = res;
         }

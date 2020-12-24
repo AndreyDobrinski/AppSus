@@ -1,4 +1,37 @@
-/*smth*/
+/* FONTS  */
+@font-face{
+    font-family: fas;
+    src: url(../../../assets/fonts/font-awesome/fa-solid-900.ttf);
+}
+  
+@font-face{
+    font-family: marck;
+    src: url(../../../assets/fonts/font-text/MarckScript-Regular.ttf);
+}
+/* BUTTONS  */
+.fas{
+    font-family: fas;
+    font-size: larger;
+    background-color: inherit;
+    border: none;
+    outline: none;
+}
+
+.fas.delete::before{
+    content: "";
+}
+.fas.delete:hover{
+    color: #025f70;
+    cursor: pointer;
+}
+.far.fa-edit::before{
+    content: "";
+}
+.far.fa-edit:hover{
+    color: #025f70;
+    cursor: pointer;
+}
+
 
 .keep-header{
     background: aqua;
@@ -9,7 +42,6 @@
     margin: auto;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    /* grid-template-rows: repeat(auto-fill, minmax(250px, 1fr)); */
     grid-auto-rows: 250px;
     gap: 40px;
 }
@@ -18,7 +50,23 @@
     width: 100%;
     display: flex;
     flex-direction: column;
+    padding: 10px;
 }
+
+/* note-text */
+.text-text{
+    outline: none;
+    border: none;
+    resize: none;
+    background-color: inherit;
+    /* font-family: ; */
+  
+}
+
+/* note-img */
 .note img {
     width: 100px;
+    
 }
+
+/* noye-todo */

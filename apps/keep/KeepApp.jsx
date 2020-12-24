@@ -6,8 +6,7 @@ import { NoteCreation } from './cmps/NoteCreation.jsx'
 
 export class KeepApp extends React.Component {
     state = {
-        notes: null,
-        answers: []
+        notes: null
     }
 
     componentDidMount() {
@@ -19,7 +18,7 @@ export class KeepApp extends React.Component {
 
     loadNotes() {
         keepService.query()
-            .then(notes => this.setState({ notes, answers: new Array(notes.length) }))
+            .then(notes => this.setState({ notes }))
     }
 
     onAddNote = (note) => {
@@ -30,6 +29,11 @@ export class KeepApp extends React.Component {
     onUpdateNote = (idx, note) => {
         console.log('UpdatingNote', note)
         keepService.updNote(idx, note)
+            .then(() => this.loadNotes())
+    }
+    onDeleteNote = (idx) => {
+        console.log('DeletingNote', idx)
+        keepService.delNote(idx)
             .then(() => this.loadNotes())
     }
 
@@ -45,7 +49,9 @@ export class KeepApp extends React.Component {
                 <div className="notes">
                     {notes.map((note, idx) => {
                         // return <DynamicKeepCmp key={idx} currNote={note.type} info={note.info} />
-                        return <DynamicKeepCmp key={idx} note={note} onUpdateNote={(res) => this.onUpdateNote(idx, res)} />
+                        return <DynamicKeepCmp key={idx} note={note}
+                            onUpdateNote={(res) => this.onUpdateNote(idx, res)}
+                            onDeleteNote={() => { this.onDeleteNote(idx) }} />
                     })}
                 </div>
             </section>
