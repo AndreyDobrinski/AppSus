@@ -51,7 +51,8 @@ export class KeepApp extends React.Component {
                         return <DynamicKeepCmp key={idx} note={note}
                             onUpdateNote={(res) => this.onUpdateNote(idx, res)}
                             onDeleteNote={() => { this.onDeleteNote(idx) }} />
-                    })}
+                    })
+                    }
                 </div>
             </section>
         )

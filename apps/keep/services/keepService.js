@@ -48,9 +48,12 @@ function query() {
 }
 
 function addNote(note) {
+    console.log('note in service', note)
     var noteToAdd
     if (note.type === 'NoteText') {
         noteToAdd = { ...note }
+        // noteToAdd.info.txt = note.info.txt
+        console.log('note in service2', note)
     }
     if (note.type === 'NoteImg') {
         noteToAdd = { ...note }
