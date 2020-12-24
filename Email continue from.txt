@@ -1,0 +1,13 @@
+X //////////////// WORK CRUDL ADD ///////////////
+//////////////// WORK ON SUBMIT BUTTON ///////////////
+
+
+
+Need fixes : 
+ 1. Dont let the user submit an empty folder
+
+
+
+Need to change :
+ 1. Change the Options font family style to something normal
+ 2. Make the compase BTN different from the others

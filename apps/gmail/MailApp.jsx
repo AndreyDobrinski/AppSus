@@ -16,6 +16,11 @@ export class MailApp extends React.Component {
         },
         selectedEmail:null,
         comeposClicked:false,
+        newEmail:{
+            subject:'',
+            body:''
+        },
+
 
 
     }
@@ -91,24 +96,36 @@ export class MailApp extends React.Component {
 
     onSendEmail = (ev) =>{
         ev.preventDefault();
-        console.log('Email sent!');
         ////// nice message of email sent goes here //////////
         eventBusService.emit('addemail' , {type: 'success' , txt: 'Your Email was successfully added!'})
+        ///////////// FUNCTION ADD GOES HERE //////////
+        MailService.addEmail(this.state.newEmail).then(email =>{
+            console.log('Email sent!' ,email );
+            this.onAdd()
+
+
+        })
+
         this.setState({
             comeposClicked : false
         })
 
     }
 
+
+    onAdd = () =>{
+        this.loadEmail()
+
+    }
+
     onInputChange = (ev) =>{
-        const value = ev.target.value
-        console.log(value);
 
+        const email = {...this.state.newEmail}
+        email[ev.target.name] = ev.target.value 
 
-
-        // this.setState({
-        //     emails: {...this.state.emails , [ev.target.name] : value}
-        // })
+        this.setState({
+            newEmail : email
+        })
     }
 
 
