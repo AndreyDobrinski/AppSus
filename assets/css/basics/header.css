@@ -1,29 +1,133 @@
+/* FONTS  */
 
-.navigation-links-header {
-    background-color: #888;
-    padding: 10px;
+@font-face{
+  font-family: bangers;
+  src: url(../../fonts/font-text/Bangers-Regular.ttf);
+}
+@font-face{
+  font-family: archivo;
+  src: url(../../fonts/font-text/Bangers-Regular.ttf);
+}
+
+
+.navigation-links{
+  display: flex;
+  font-family: bangers;
+  /* text-align: center; */
+}
+
+
+
+.navigation-color{
+  background-color: #888;
+  width: 100vw;
+
+
+}
+
+.main-header {
     display: flex;
     font-size: larger;
-    /* margin: 0 auto; */
+    justify-content: space-between;
+    font-size: 2em;
+    height: 100px;
 
-  }
+
+
+
+}
+
+.navigation-header-logo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 0px 0px 20px;
+  font-family: archivo;
+
+
+}
   
-  .navigation-links-home {
-    margin-right: 30px;
-  }
-  
+.navigation-header-logo:hover{
+  cursor: default;
+  -webkit-text-stroke: 1.5px rgb(172, 0, 240); /* width and color */
+
+}
+
+
   .active {
     color: rgb(155, 67, 67);
   }
   
-  
-  .app-header-home{
-    text-align: center;
-    font-size: 2em;
+
+  /* MENU BTN  */
+
+  .menu-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+ /* no-select-helpers  */
+ .noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+
+
+.app-header-about{
+  text-align: center;
+  font-size: 2em;
+}
+.app-header-home{
+  text-align: center;
+  font-size: 2em;
+}
+
+
+
+
+/* 
+@media (max-width:760px){
+  .navigation-links{
+    display: flex;
+    font-family: bangers;
     
-  }
-  .app-header-about{
+
+    margin: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    z-index: 2;
+    width: 260px;
+    flex-direction: column;
     text-align: center;
-    font-size: 2em;
+    background-color: rgb(173 144 191 / 0.9);
+    border-left: 1px solid grey;
+    padding: 0;
+
+
+    transform: translateX(100%);
+  
   
   }
+
+  .navigation-links a{
+    display: block;
+    width: 260px;
+    padding: 1.125rem 0;
+  }
+
+
+  .navigation-links li:not(:last-child){
+    border-bottom: 1px solid gray;
+  }
+
+} */

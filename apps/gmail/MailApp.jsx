@@ -3,6 +3,8 @@ import { MailService } from '../gmail/services/mail-service.js'
 import { EmailList } from '../gmail/cmps/Email-list.jsx'
 import { EmailOptions } from '../gmail/cmps/Email-options.jsx'
 import { EmailFilter } from '../gmail/cmps/Email-filter.jsx'
+import { eventBusService } from  '../../services/eventBusService.js'
+import { UserMsg } from '../gmail/cmps/Email-UserMsg.jsx'
 
 
 export class MailApp extends React.Component {
@@ -91,6 +93,7 @@ export class MailApp extends React.Component {
         ev.preventDefault();
         console.log('Email sent!');
         ////// nice message of email sent goes here //////////
+        eventBusService.emit('addemail' , {type: 'success' , txt: 'Your Email was successfully added!'})
         this.setState({
             comeposClicked : false
         })
@@ -112,8 +115,9 @@ export class MailApp extends React.Component {
     render() {
         return (
             <section>
-
+                
                 <AppHeader />
+                <UserMsg />
                 <EmailFilter setFilter = {this.onSetFilter}/>
                 <section className="email-container">
                     

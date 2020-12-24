@@ -1,20 +1,36 @@
 
+* {
+  box-sizing: border-box;
+}
+
+
 body {
-    background-color: lightblue;
-    margin: 0;
-  }
+  background-color: lightblue;
+  margin: 0;
+}
+
+/* header {
+  background-color: lightskyblue;
+  padding: 5px;
+} */
+
+li {
+  list-style-type: none;
+  margin-right: 30px;
+  /* text-decoration: none;
+  color: black; */
   
-  header {
-    background-color: lightskyblue;
-    padding: 5px;
-  }
+}
+
+
+
+
+a {
+  text-decoration: none;
+  color: black;
   
-  li {
-    list-style-type: none;
-  }
-  
-  a {
-    text-decoration: none;
-    color: black;
-  }
-  
+}
+
+a:hover{
+color: green;
+}

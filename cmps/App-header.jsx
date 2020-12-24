@@ -1,14 +1,29 @@
+
 const {NavLink ,withRouter } = ReactRouterDOM
+
+
 
 function _AppHeader (){
     return (
-        <div className="navigation-links-header">
+    <div className ="navigation-color">
 
-            <div className="navigation-links-home"><NavLink exact to="/">Home</NavLink></div>
-            <div><NavLink to="/about">About</NavLink></div>
-            <div><NavLink to="/mister-email">Email</NavLink></div>
-            <div><NavLink to="/miss-keep">Keep</NavLink></div>
-        </div>
+        <header className="main-header">
+
+            <div className="navigation-header-logo noselect">AppSus</div>
+
+                <ul className="navigation-links noselect">
+
+                    <li><NavLink exact to="/">Home</NavLink></li>
+                    <li><NavLink to="/mister-email">Email</NavLink></li>
+                    <li><NavLink to="/miss-keep">Keep</NavLink></li>
+                    <li><NavLink to="/about">About</NavLink></li>
+
+                </ul>
+
+        </header>
+
+    </div>
+
     )
 
 }
