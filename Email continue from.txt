@@ -1,5 +1,6 @@
 X //////////////// WORK CRUDL ADD ///////////////
-//////////////// WORK ON SUBMIT BUTTON ///////////////
+X //////////////// WORK ON SUBMIT BUTTON ///////////////
+//////////////// WORK ON DELETE MODAL ///////////////
 
 
 
@@ -11,3 +12,21 @@ Need fixes :
 Need to change :
  1. Change the Options font family style to something normal
  2. Make the compase BTN different from the others
+ 3. remore marging from emails
+ 4.increse input width
+
+
+Need to add:
+ 1.Add time created near buttons of a email
+
+
+
+ASK :
+ X 1.how to make a mobile version for email
+
+
+
+HTML Need to add:
+ 1.fav logo
+ 2.change document name
+ 

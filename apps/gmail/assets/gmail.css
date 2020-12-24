@@ -4,10 +4,10 @@
   font-family: fas;
   src: url(../../../assets/fonts/font-awesome/fa-solid-900.ttf);
 }
-/* @font-face{
-  font-family: fab;
-  src: url(../../../assets/fonts/font-awesome/fa-brands-400.ttf);
-} */
+@font-face{
+  font-family: bangers;
+  src: url(../../../assets/fonts/font-text/Bangers-Regular.ttf);
+}
 
 
 @font-face{
@@ -88,8 +88,6 @@
   /* background-color: blueviolet; */
   background-color: white;
   /* font-family: marck; */
-
-
   
 }
 
@@ -98,9 +96,9 @@
   margin: 20px 20px 10px 20px;
   width: 100px;
   border: none;
-  font-family: marck;
-  font-weight: 900;
-  font-size: 1em;
+  font-family: bangers;
+  font-weight: 400;
+  font-size: 1.3rem;
   outline: none;
   /* border: 1px solid black; */
 
@@ -113,7 +111,26 @@
 
 }
 
+.btn.email-compose{
+  background-color: inherit;
+  /* border: 1px solid grey; */
+  border-radius: 50px;
+  width: 150px;
+  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.302), 0 1px 3px 1px rgba(60, 64, 67, 0.149);
+}
 
+.btn.email-compose:hover{
+  background-color: rgb(116, 112, 112);
+
+}
+
+
+
+.options-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 /* EMAILS LIST */
 .email-subject{
@@ -259,6 +276,24 @@
   height: 40vh;
 }
 
+
+
+.modal-compose-submit{
+  outline: none;
+  border: none;
+  background-color: #d6d3d3;
+  padding: 5px 15px 5px 15px;
+  margin: 10px;
+  font-family: bangers;
+  font-size: 1.5rem;
+  
+}
+.modal-compose-submit:hover{
+  cursor: pointer;
+  background-color: grey;
+ 
+}
+
 /* EMAIL SEARCH INPUT  */
 
 .email-search{
@@ -299,7 +334,7 @@
   margin: auto;
   padding: 10px;
   border: 1px solid #888;
-  width: 80%;
+  width: 50%;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
   -webkit-animation-name: animatetop;
   -webkit-animation-duration: 0.4s;
