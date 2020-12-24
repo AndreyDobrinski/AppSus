@@ -4,6 +4,7 @@ export const keepService = {
     query,
     addNote,
     updNote,
+    delNote,
     getNoteById
 };
 
@@ -24,7 +25,7 @@ var notes = [
             title: "Me playing Mi"
         },
         style: {
-            backgroundColor: "#00d"
+            backgroundColor: "#0000dd"
         }
     },
     {
@@ -32,8 +33,8 @@ var notes = [
         info: {
             label: "How was it:",
             todos: [
-                { txt: "Do that", doneAt: null, id: util.makeid() },//
-                { txt: "Do this", doneAt: 187111111, id: util.makeid() }//
+                { txt: "Do that", isDone: false, id: util.makeid() },//
+                { txt: "Do this", isDone: false, id: util.makeid() }//
             ]
         }
     }
@@ -71,15 +72,17 @@ function addNote(note) {
     return Promise.resolve(notes);
 }
 
+function delNote(idx) {
+    notes.splice(idx, 1)
+    window.notes = notes//debug
+    return Promise.resolve();
+}
 function updNote(idx, note) {
-    // var noteToUpd = {...notes[idx]}
-    // noteToUpd = note
-    // notes = 
     getNoteById(idx)
         .then(res => {
             res = note
         })
-        window.notes = notes//debug
+    window.notes = notes//debug
     return Promise.resolve(notes[idx]);
 }
 function getNoteById(id) {
