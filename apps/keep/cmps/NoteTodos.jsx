@@ -1,3 +1,5 @@
+import { util } from '../../../services/util.js'
+
 export class NoteTodos extends React.Component {
     state = {
         note: null
@@ -31,7 +33,7 @@ export class NoteTodos extends React.Component {
     }
     onAddTodo = (idx) => {
         const noteCopy = { ...this.state };
-        noteCopy.note.info.todos.splice(++idx, 0, { txt: '', isDone: false })
+        noteCopy.note.info.todos.splice(++idx, 0, { txt: 'To Do', isDone: false })
         this.setState(noteCopy, () => { console.log(this.state) })
     }
 
@@ -43,10 +45,10 @@ export class NoteTodos extends React.Component {
             <div className="todos">
                 {this.state.note.info.todos.map((todo, idx) => {
                     return (
-                        <div className="todo-item">
+                        <div className="todo-item" key={todo.id}>
                             <button className="fas check" onClick={() => { this.onUpdStatus(idx) }}></button>
                             <input type="text" name="todo" id={todo.id} value={todo.txt}
-                                onChange={this.handleChange} key={todo.id} className="text-todo"
+                                onChange={this.handleChange} className="text-todo"
                                 style={todo.isDone ? { textDecoration: 'line-through' } : { textDecoration: 'none' }} />
                             <button className="fas delete-item" onClick={() => { this.onDeleteTodo(idx) }}></button>
                             <button className="fas add-item" onClick={() => { this.onAddTodo(idx) }}></button>

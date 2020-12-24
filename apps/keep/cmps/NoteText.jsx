@@ -1,10 +1,11 @@
+
 export class NoteText extends React.Component {
     state = {
         note: null
     }
 
     componentDidMount() {
-        console.log('from props', this.props.note)
+        console.log('from props', this.props)
         this.setState({ note: this.props.note })
     }
 
@@ -23,7 +24,7 @@ export class NoteText extends React.Component {
             <textarea className="text-text" id="" rows="10" value={this.state.note.info.txt} onChange={this.handleChange}></textarea>
             <div className="text-settings">
                 <button className="fas done" onClick={() => { this.props.onUpdateNote(this.state.note) }}></button>
-                <button className="fas delete" onClick={this.props.onDeleteNote}></button>
+                {/* <button className="fas delete" onClick={this.props.onDeleteNote}></button> */}
             </div>
         </div>
         {/* className="add-note-text" */ }
