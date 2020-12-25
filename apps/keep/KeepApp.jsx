@@ -42,7 +42,7 @@ export class KeepApp extends React.Component {
         if (!notes) return <section></section>
         return (
             <section>
-                <AppHeader />
+                {/* <AppHeader /> */}
                 {/* <NoteCreation onAddNote={(note) => { this.onAddNote(note) }} /> */}
                 <NoteCreation onAddNote={this.onAddNote} />
                 <div className="notes">

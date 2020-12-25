@@ -49,6 +49,34 @@ function _getDemoEmails(){
             isRead: false,
             sentAt:0
         },
+        {
+            id: util.makeid(),
+            subject:'We have been trying to reach you about your cars extended warranty',
+            body:'The vibrating professor slowly killed because some hamster calmly slept across a hot professor which, became a beautiful, slimy bird.',
+            isRead: false,
+            sentAt:0
+        },
+        {
+            id: util.makeid(),
+            subject:'Anime Attack on Titan Final season is out!',
+            body:'The beautiful hamster sadly died because some bird slowly kicked down a vibrating clock which, became a dumb, soft boy.',
+            isRead: false,
+            sentAt:0
+        },
+        {
+            id: util.makeid(),
+            subject:'Trump got Elected again somehow',
+            body:'The rough plastic shockingly sliced because some teacher humbly rolled below a lovely plastic which, became a hot, dumb professor.',
+            isRead: false,
+            sentAt:0
+        },
+        {
+            id: util.makeid(),
+            subject:'Youre order 190247 has arrived to its destination',
+            body:'The dumb dog passionately kicked because some duck sadly sliced upon a slimy old lady which, became a slimy, beautiful old lady.',
+            isRead: false,
+            sentAt:0
+        },
 
 
     ]

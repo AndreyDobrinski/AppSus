@@ -1,14 +1,17 @@
 import {AppHeader} from '../cmps/App-header.jsx'
 // import {} from '../assets/img/My-face.jpg'
 
+const {NavLink } = ReactRouterDOM
+
+
 export class About extends React.Component {
 
     render(){
         return(
             <section>
-                <AppHeader/>
+                {/* <AppHeader/> */}
                 <div className="app-about-header">
-                    <h1 className="app-about-title">About AppSus</h1>
+                    <h1 className="app-about-title">Welcome To AppSus</h1>
                     <p className="app-about-desc1">Now is your chance to try out NEW apps made for AppSus! Life was never so easy as before.</p>
                     <p className="app-about-desc2">Here are some apps that are available to use <span>Right now!</span></p>
                     <p className="app-about-desc3">More Apps Coming Soon</p>
@@ -24,6 +27,9 @@ export class About extends React.Component {
                         </div>
                         <p className="svg1-txt1">A new Mail similar to the original made Gmail.</p>
                         <p className="svg1-txt2">View your emails and send your own emails for Work , Friends And Family.</p>
+                        <div className="app-about-btn">
+                            <button className="about-btn"><NavLink to="/mister-email">Click here to see Email!</NavLink> </button>
+                        </div>
                     </div>
                     <div className="app-about-svg2">
                         <div className="app-about-svg-img">
@@ -32,6 +38,9 @@ export class About extends React.Component {
                         <p className="svg1-txt1">Capture what’s on your mind.</p>
                         <p className="svg1-txt1">Add notes, lists , photos to Keep. Everything that you add to Keep syncs accross your device</p>
                         <p className="svg1-txt2">So that important stuff is allways with you.</p>
+                        <div className="app-about-btn">
+                            <button className="about-btn"><NavLink to="/miss-keep">Click here to see Keep!</NavLink> </button>
+                        </div>
 
                     </div>
                     </div>
@@ -44,6 +53,9 @@ export class About extends React.Component {
                         <p className="svg1-txt1">Intrested in a book? We have allready some of the books that may intrest you ,  take a look.</p>
                         <p className="svg1-txt1">Didnt find the book that you were looking for? Dont worry!</p>
                         <p className="svg1-txt2">You can search for your selected book and add it to the liberary.</p>
+                        <div className="app-about-btn">
+                            <button className="about-btn"><NavLink to="/book">Click here to see Books!</NavLink> </button>
+                        </div>
 
 
                     </div>

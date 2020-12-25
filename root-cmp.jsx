@@ -1,8 +1,10 @@
-import {Home} from './pages/Home.jsx'
+// import {Home} from './pages/Home.jsx'
 import {About} from './pages/About.jsx'
 import {MailApp} from './apps/gmail/MailApp.jsx'
 import {KeepApp} from './apps/keep/KeepApp.jsx'
-
+import {AppHeader} from './cmps/App-header.jsx'
+import {BookReview} from './apps/books/pages/book-review.jsx'
+import {BookApp} from './apps/books/pages/book-app.jsx'
 
 
 
@@ -16,12 +18,13 @@ export function App() {
 <Router>
 
     <section className="app">
-
+        <AppHeader />
         <Switch>
+            <Route path="/book/reviews/:bookId?" component={BookReview}/>
+            <Route path="/book" component={BookApp}/>
             <Route path="/mister-email" component={MailApp} />
             <Route path="/miss-keep" component={KeepApp} />
-            <Route path="/about" component={About} />
-            <Route path="/" component={Home} />
+            <Route path="/" component={About} />
         </Switch>
 
 

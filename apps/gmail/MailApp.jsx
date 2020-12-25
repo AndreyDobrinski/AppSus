@@ -172,7 +172,7 @@ export class MailApp extends React.Component {
         return (
             <section>
                 
-                <AppHeader />
+                {/* <AppHeader /> */}
                 <UserMsg />
                 <EmailFilter setFilter = {this.onSetFilter}/>
                 <section className="email-container">

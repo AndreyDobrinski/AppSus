@@ -11,5 +11,8 @@
 /* KEEP */
 @import '../../apps/keep/assets/keep.css';
 
+/* BOOK */
+@import '../../apps/books/assets/css/main.css';
+
 /* ANIMATE  */
 @import '../../lib/animate.css'

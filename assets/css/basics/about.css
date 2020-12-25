@@ -85,6 +85,10 @@
     text-align: center;
     font-size: 1.5em;
 }
+
+.app-about-desc2 span {
+    color:  #3d3c3c;
+}
 .app-about-desc3{
     color:#a59e9e;
     font-family: roboto;
@@ -117,15 +121,13 @@
     font-family: roboto;
     font-size: 1.1rem;
     text-align: center;
-    color: #7d7b7b;
-
-    
+    color: #7d7b7b;  
 }
 .svg1-txt2{
     font-family: roboto;
     font-size: 1.1rem;
     text-align: center;
-    margin-bottom: 90px;
+    /* margin-bottom: 90px; */
     color: #7d7b7b;
 
     
@@ -134,14 +136,112 @@
 
 
 .app-about-footer{
-    background-color: rgb(161, 210, 226);
+    background-color: #97c7dc;
     height: 500px;
     width: 100%;
+}
+
+
+.app-about-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 90px;
+
+}
+
+
+.about-btn{
+    border: none;
+    outline: none;
+    background-color: inherit;
+    font-family: bangers;
+    font-size: 1.4em;
 }
 
 
 
 
 
+@media (max-width: 1100px) {
+
+    /* MAIN TITLE  */
+    .app-about-title{
+        font-size: 2em;
+    }
+
+    .app-about-desc1{
+        font-size: 1em;
+    }
+    
+    .app-about-desc2{
+        font-size: 1em;
+    }
+
+    /* MAIN BODY  */
+
+    .app-about-svg{
+        grid-template-columns: 1fr ;
+    
+    }
+
+    .svg1-txt1{
+        font-size: 1rem; 
+    }
+    .svg1-txt2{
+        font-size: 1rem; 
+    }
+
+    /* MAIN FOOTER  */
+
+    .app-creator2{
+        margin-right: 80px;
+    }
+    .app-creator1{
+        margin-left: 80px;
+    }
+    
+    
+    
+    
+    
+}
+
+
+
+
+@media (max-width: 560px) {
+    
+    /* MAIN TITLE  */
+    .app-about-title{
+        font-size: 1.7em;
+    }
+    
+    .app-about-desc1{
+        font-size: 0.8em;
+    }
+    
+    .app-about-desc2{
+        font-size: 0.8em;
+    }
+    
+    /* MAIN BODY  */
+    
+    
+    .svg1-txt1{
+        font-size: 0.9rem; 
+    }
+    .svg1-txt2{
+        font-size: 0.9rem; 
+    }
+    
+    .app-creator2{
+        margin-right: 30px;
+    }
+    .app-creator1{
+        margin-left: 30px;
+    }
+  
+}
 
 
