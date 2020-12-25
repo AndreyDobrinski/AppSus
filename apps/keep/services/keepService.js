@@ -70,7 +70,7 @@ function addNote(note) {
         })
         console.log('noteToAdd', noteToAdd)
     }
-    notes = [noteToAdd, ...notes];
+    notes = [...notes, noteToAdd];
     window.notes = notes//debug
     return Promise.resolve(notes);
 }
