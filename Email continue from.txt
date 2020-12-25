@@ -1,6 +1,9 @@
 X //////////////// WORK CRUDL ADD ///////////////
 X //////////////// WORK ON SUBMIT BUTTON ///////////////
-//////////////// WORK ON DELETE MODAL ///////////////
+X //////////////// remore marging from emails ///////////////
+X //////////////// WORK ON HEADER ///////////////
+//////////////// Finish stuff for today ///////////////
+
 
 
 
@@ -8,12 +11,20 @@ Need fixes :
  1. Dont let the user submit an empty folder
 
 
+nice things to add:
+ 1. make delete MODAL
+ 2. make filter by deleted and unread
+ 3. onClick of one of the options, change its bgc 
+ 4. In about , add navigations to each site
+ 5. add a total of 7-10 emails
+
+
 
 Need to change :
- 1. Change the Options font family style to something normal
- 2. Make the compase BTN different from the others
- 3. remore marging from emails
- 4.increse input width
+X 1. Change the Options font family style to something normal
+X 2. Make the compase BTN different from the others
+X 3. remore marging from emails
+X 4. increse input width
 
 
 Need to add:
@@ -22,11 +33,28 @@ Need to add:
 
 
 ASK :
- X 1.how to make a mobile version for email
+X 1.how to make a mobile version for email
 
 
 
 HTML Need to add:
  1.fav logo
- 2.change document name
+X 2.change document name
+ 3.Need to make a mobile version for Phone(About)
  
+Other apps needed fixing/adding:
+ 1.homepage footer looking not good
+X 2.change the welcome font family
+ 
+
+
+talk to vika about:
+ 1.which book store to user
+ 2.what looks about for HEADER
+ 3.work on header hamburger on saturday
+
+
+finish today:
+ 1.mobile version for About
+ 2.links to apps for About
+ 3.make 7-10 default emails

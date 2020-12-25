@@ -1,0 +1,147 @@
+@font-face{
+    font-family: roboto;
+    src: url(../../fonts/font-text/Roboto-Medium.ttf);
+}
+  
+
+/* base  */
+
+.app-creators-img{
+    margin-top: 50px;
+    border-radius: 50%;
+    width: 100px;
+}
+
+
+.app-about-leader{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+
+
+}
+
+.app-about-txt1{
+    margin: 0;
+    margin-top: 10px;
+    font-family: roboto;
+    text-align: center;
+    font-size: 1.4rem;
+
+
+}
+
+.app-about-txt2{
+    margin: 0;
+    margin-top: 20px;
+    font-family: roboto;
+    text-align: center;
+    color: #7d7b7b;
+
+}
+
+.app-about-creators{
+    display: flex;
+    justify-content: space-between;
+}
+
+.app-creator2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-right: 280px;
+}
+.app-creator1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 280px;
+}
+
+
+
+
+.app-about-title{
+    font-family: roboto;
+    text-align: center;
+    margin-top: 80px;
+    font-size: 2.5em;
+    color:rgb(78 77 77);
+}
+
+.app-about-desc1{
+    color: #7d7b7b;
+    font-family: roboto;
+    text-align: center;
+    font-size: 1.5em;
+}
+.app-about-desc2{
+    color: #7d7b7b;
+    font-family: roboto;  
+    text-align: center;
+    font-size: 1.5em;
+}
+.app-about-desc3{
+    color:#a59e9e;
+    font-family: roboto;
+    text-align: center;
+    font-size: 1em;
+    margin-bottom: 50px;
+}
+
+.app-about-header{
+    border-bottom: 1px solid #80808047;
+    margin-bottom: 100px;
+}
+
+.app-about-svg{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+}
+
+
+
+.app-about-svg-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.svg1-txt1{
+    font-family: roboto;
+    font-size: 1.1rem;
+    text-align: center;
+    color: #7d7b7b;
+
+    
+}
+.svg1-txt2{
+    font-family: roboto;
+    font-size: 1.1rem;
+    text-align: center;
+    margin-bottom: 90px;
+    color: #7d7b7b;
+
+    
+}
+
+
+
+.app-about-footer{
+    background-color: rgb(161, 210, 226);
+    height: 500px;
+    width: 100%;
+}
+
+
+
+
+
+
+

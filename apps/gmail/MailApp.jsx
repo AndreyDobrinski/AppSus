@@ -58,40 +58,37 @@ export class MailApp extends React.Component {
     }
 
 
-    // onEmailDelete = (email) =>{
-    //     console.log('deliting email' , email);
-    //     var areUSure = confirm('Are you sure that you want to delete this Email?')
-
-    //     if(areUSure){
-    //         var copyEmail = MailService.deleteEmail(email.id)
-    //         // console.log(copyEmail);
-    //         this.setState({
-    //             emails : copyEmail
-    //         })
-    //     }
-    //     else return
-    // }
-
-
-
     onEmailDelete = (email) =>{
-        // console.log('deliting email' , email);
-        this.setState({deleteClicked:true})
-
-        var areUSure = this.state.isDelete
-        console.log(areUSure);
+        console.log('deliting email' , email);
+        var areUSure = confirm('Are you sure that you want to delete this Email?')
 
         if(areUSure){
             var copyEmail = MailService.deleteEmail(email.id)
             // console.log(copyEmail);
             this.setState({
-                emails : copyEmail,
-                // deleteClicked : false,
-                // isDelete : false
+                emails : copyEmail
             })
         }
         else return
     }
+
+
+
+    // onEmailDelete = (email) =>{
+    //     this.setState({deleteClicked:true})
+
+    //     var areUSure = this.state.isDelete
+    //     console.log(areUSure);
+
+    //     if(this.state.isDelete){
+    //         var copyEmail = MailService.deleteEmail(email.id)
+    //         this.setState({
+    //             emails : copyEmail,
+
+    //         })
+    //     }
+    //     else return
+    // }
 
     
 
@@ -156,20 +153,20 @@ export class MailApp extends React.Component {
         })
     }
 
-    onYesClicked =()=>{
-        console.log('YES CLICKED');
-        this.setState({
-            isDelete : true,
-            deleteClicked : false
+    // onYesClicked =()=>{
+    //     console.log('YES CLICKED');
+    //     this.setState({
+    //         isDelete : true,
+    //         deleteClicked : false
 
-        })
-    }
-    onNoClicked =()=>{
-        console.log('NO CLICKED');
-        this.setState({
-            deleteClicked : false
-        })
-    }
+    //     })
+    // }
+    // onNoClicked =()=>{
+    //     console.log('NO CLICKED');
+    //     this.setState({
+    //         deleteClicked : false
+    //     })
+    // }
 
     render() {
         return (
@@ -226,7 +223,7 @@ export class MailApp extends React.Component {
                     </form>
                     </div>}
 
-                    {this.state.deleteClicked && <div className="modal">
+                    {/* {this.state.deleteClicked && <div className="modal">
                         <div className="modal-content">
                             <div className="modal-header">
                             <h2>Are you sure you want to delete this Email?</h2>
@@ -243,7 +240,7 @@ export class MailApp extends React.Component {
 
                         
                     
-                    </div>}
+                    </div>} */}
 
 
 

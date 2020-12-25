@@ -4,9 +4,11 @@ export class Home extends React.Component {
 
     render(){
         return(
-            <section>
+            <section className="app-home">
                 <AppHeader/>
-                <h1 className="app-header-home">Home</h1>
+                <img className="app-home-img" src="../../assets/img/apps.jpg" alt=""/>
+                <div className="app-title-home">Welcome To our AppSus!</div>
+                
             </section>
         )
     }

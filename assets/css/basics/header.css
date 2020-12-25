@@ -9,6 +9,11 @@
   src: url(../../fonts/font-text/Bangers-Regular.ttf);
 }
 
+a{
+  color: rgb(48, 120, 145);
+
+}
+
 
 .navigation-links{
   display: flex;
@@ -19,8 +24,9 @@
 
 
 .navigation-color{
-  background-color: #888;
+  background-color: #6dbcde;
   width: 100vw;
+
 
 
 }
@@ -31,11 +37,11 @@
     justify-content: space-between;
     font-size: 2em;
     height: 100px;
-
-
-
+    color: rgb(48, 120, 145);
 
 }
+
+
 
 .navigation-header-logo{
   display: flex;
@@ -49,14 +55,13 @@
   
 .navigation-header-logo:hover{
   cursor: default;
-  -webkit-text-stroke: 1.5px rgb(172, 0, 240); /* width and color */
 
 }
 
 
-  .active {
-    color: rgb(155, 67, 67);
-  }
+.active {
+    color: rgb(20, 67, 80);
+}
   
 
   /* MENU BTN  */
@@ -81,10 +86,7 @@
 
 
 
-.app-header-about{
-  text-align: center;
-  font-size: 2em;
-}
+
 .app-header-home{
   text-align: center;
   font-size: 2em;
