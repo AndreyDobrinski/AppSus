@@ -20,6 +20,8 @@ export class MailApp extends React.Component {
             subject:'',
             body:''
         },
+        deleteClicked:false,
+        isDelete:false,
 
 
 
@@ -56,18 +58,44 @@ export class MailApp extends React.Component {
     }
 
 
+    // onEmailDelete = (email) =>{
+    //     console.log('deliting email' , email);
+    //     var areUSure = confirm('Are you sure that you want to delete this Email?')
+
+    //     if(areUSure){
+    //         var copyEmail = MailService.deleteEmail(email.id)
+    //         // console.log(copyEmail);
+    //         this.setState({
+    //             emails : copyEmail
+    //         })
+    //     }
+    //     else return
+    // }
+
+
+
     onEmailDelete = (email) =>{
-        console.log('deliting email' , email);
-        var areUSure = confirm('Are you sure that you want to delete this Email?')
+        // console.log('deliting email' , email);
+        this.setState({deleteClicked:true})
+
+        var areUSure = this.state.isDelete
+        console.log(areUSure);
+
         if(areUSure){
             var copyEmail = MailService.deleteEmail(email.id)
             // console.log(copyEmail);
             this.setState({
-                emails : copyEmail
+                emails : copyEmail,
+                // deleteClicked : false,
+                // isDelete : false
             })
         }
         else return
     }
+
+    
+
+
 
 
     onCloseModal = () =>{
@@ -128,6 +156,20 @@ export class MailApp extends React.Component {
         })
     }
 
+    onYesClicked =()=>{
+        console.log('YES CLICKED');
+        this.setState({
+            isDelete : true,
+            deleteClicked : false
+
+        })
+    }
+    onNoClicked =()=>{
+        console.log('NO CLICKED');
+        this.setState({
+            deleteClicked : false
+        })
+    }
 
     render() {
         return (
@@ -177,12 +219,33 @@ export class MailApp extends React.Component {
 
                         </div>
                     
-                        <button type="submit">Submit</button>
+                        <button type="submit" className="modal-compose-submit">Submit</button>
 
 
 
                     </form>
                     </div>}
+
+                    {this.state.deleteClicked && <div className="modal">
+                        <div className="modal-content">
+                            <div className="modal-header">
+                            <h2>Are you sure you want to delete this Email?</h2>
+                        </div>
+
+                        <div className="modal-body">
+                            <button onClick={()=>this.onYesClicked()}>Yes</button>
+                            <button onClick={()=>this.onNoClicked()}>No</button>
+                        </div>
+
+
+                        </div>
+                        
+
+                        
+                    
+                    </div>}
+
+
 
             </section>
         )
