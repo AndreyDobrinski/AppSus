@@ -27,25 +27,33 @@
 .fas.delete::before{
     content: "";
 }
+.fas.delete {
+    color:rgb(63, 63, 63);
+}
 .fas.delete:hover{
-    color: #025f70;
+    color: rgb(24, 23, 23);
     cursor: pointer;
 }
-
 
 .fas.edit::before{
     content: "";
 }
+.fas.edit {
+    color:rgb(63, 63, 63);
+}
 .fas.edit:hover{
-    color: #025f70;
+    color: rgb(24, 23, 23);
     cursor: pointer;
 }
 
 .fas.done::before{
     content: "";
 }
+.fas.done {
+    color:rgb(63, 63, 63);  
+}
 .fas.done:hover{
-    color: #025f70;
+    color:rgb(24, 23, 23);
     cursor: pointer;
 }
 
@@ -77,29 +85,35 @@
 }
 .fas.text::before{
     content: "";
-    color: gray;
-    font-size: 1.2rem
+    font-size: 1.2rem;
+}
+.fas.text {
+    color: darkgrey;
 }
 .fas.text:hover{
-    color: red;
+    color: grey;
     cursor: pointer;
 }
 .far.img::before{
     content: "";
-    color: gray;
     font-size: 1.2rem
 }
+.far.img {
+    color: darkgrey;
+}
 .far.img:hover{
-    color: red;
+    color: grey;
     cursor: pointer;
 }
 .fas.todo::before{
     content: "";
-    color: gray;
     font-size: 1.2rem
 }
+.fas.todo {
+    color: darkgrey;
+}
 .fas.todo:hover{
-    color: red;
+    color: grey;
     cursor: pointer;
 }
 .fas.create::before{
@@ -134,11 +148,11 @@
     padding: 10px;
 }
 .note:hover {
-    transform: scale(1.05);
-    -webkit-box-shadow: -4px 2px 22px 3px rgba(120,116,120,1);
-    -moz-box-shadow: -4px 2px 22px 3px rgba(120,116,120,1);
-    box-shadow: -4px 2px 22px 3px rgba(120,116,120,1);
-    /* transition: transform -webkit-box-shadow  -moz-box-shadow box-shadow 0.5s */
+    transform: scale(1.02);
+    -webkit-box-shadow: 0px 0px 10px 8px rgba(117,117,117,1);
+    -moz-box-shadow: 0px 0px 10px 8px rgba(117,117,117,1);
+    box-shadow: 0px 0px 10px 8px rgba(117,117,117,1);
+    transition: all 0.3s
 
 }
 /* note-text */
@@ -225,12 +239,16 @@
 .note-creator {
     width: 40%;
     margin: 40px auto;
-    text-align: center;
-    background-color: lavender;
+    /* text-align: center; */
+    background-color: rgb(241, 241, 250);
+    /* background-color: #e6e6faba; */
     padding: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.note-creator form {
+    width: -webkit-fill-available;
 }
 .note-creator-inp {
     outline: none;
@@ -239,6 +257,7 @@
     font-family: sans-serif;
     font-size: 0.9rem;
     /* text-align: center; */
-    padding: 10px;
-    width: 65%;
+    /* padding: 10px 0px 10px 10px; */
+    padding: 10px
+    /* width: 65%; */
 }
