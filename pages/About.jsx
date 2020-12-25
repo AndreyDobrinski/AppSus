@@ -1,5 +1,9 @@
 import {AppHeader} from '../cmps/App-header.jsx'
-// import {} from '../assets/img/My-face.jpg'
+import img1 from '../assets/img/rami-face.png'
+
+
+
+
 
 const {NavLink } = ReactRouterDOM
 
@@ -65,6 +69,8 @@ export class About extends React.Component {
                             
                             <div className="app-about-leader">
                                 <img className="app-creators-img" src="../assets/img/rami-face.jpg" alt=""/>
+                                {/* <img className="app-creators-img" src={require('../assets/img/rami-face.jpg')} alt=""/> */}
+                                                                       
                                 <p className="app-about-txt1">Rami Davidov</p>
                                 <p className="app-about-txt2">"Supreme Leader"</p>
                             </div>
