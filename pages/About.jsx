@@ -1,5 +1,4 @@
 import {AppHeader} from '../cmps/App-header.jsx'
-import img1 from '../assets/img/rami-face.png'
 
 
 
@@ -68,7 +67,7 @@ export class About extends React.Component {
 
                             
                             <div className="app-about-leader">
-                                <img className="app-creators-img" src="../assets/img/rami-face.jpg" alt=""/>
+                                <img className="app-creators-img" src="./assets/img/rami-face.jpg" alt=""/>
                                 {/* <img className="app-creators-img" src={require('../assets/img/rami-face.jpg')} alt=""/> */}
                                                                        
                                 <p className="app-about-txt1">Rami Davidov</p>
@@ -78,13 +77,13 @@ export class About extends React.Component {
                             <div className="app-about-creators">
 
                                 <div className="app-creator1">
-                                    <img className="app-creators-img" src="../assets/img/My-face.jpg" alt=""/>
+                                    <img className="app-creators-img" src="./assets/img/My-face.jpg" alt=""/>
                                     <p className="app-about-txt1">Andrey Dobrinski</p>
                                     <p className="app-about-txt2">"God I love CSS"</p>
                                 </div>
 
                                 <div className="app-creator2">
-                                    <img className="app-creators-img" src="../assets/img/vika-face.jpg" alt=""/>
+                                    <img className="app-creators-img" src="./assets/img/vika-face.jpg" alt=""/>
                                     <p className="app-about-txt1">Viktoria Gordeeva</p>
                                     <p className="app-about-txt2">"God I love JS"</p>
                                 </div>
