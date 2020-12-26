@@ -92,6 +92,16 @@ function pinNote(id, note) {
 function _getDemoNotes() {
     const defaultNotes = [
         {
+            type: "NoteImg",
+            info: {
+                url: 'https://miro.medium.com/max/630/0*4Dw1NAZsbHG-zIeq.jpg',
+                title: "Don't worry!"
+            },
+            style: {
+                backgroundColor: util.getRandomColor(1)
+            }
+        },
+        {
             type: "NoteTodos",
             info: {
                 label: "Way to success:",
@@ -108,16 +118,6 @@ function _getDemoNotes() {
             }
         },
         {
-            type: "NoteImg",
-            info: {
-                url: 'https://miro.medium.com/max/630/0*4Dw1NAZsbHG-zIeq.jpg',
-                title: "Don't worry!"
-            },
-            style: {
-                backgroundColor: util.getRandomColor(1)
-            }
-        },
-        {
             type: "NoteText",
             // isPinned: true,
             info: {
@@ -125,6 +125,16 @@ function _getDemoNotes() {
             },
             style: {
                 backgroundColor: util.getRandomColor(0)
+            }
+        },
+        {
+            type: "NoteVideo",
+            info: {
+                url: 'https://www.youtube.com/embed/QK2mtWjtyDU',
+                title: "Just enjoy..."
+            },
+            style: {
+                backgroundColor: util.getRandomColor(3)
             }
         },
         {

@@ -10,7 +10,7 @@ v set bigger DB
 
 v Pin fun-ty
 search and filter
-video note
+v video note
 
 
 v set Miss Book

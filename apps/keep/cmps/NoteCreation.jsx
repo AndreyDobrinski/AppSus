@@ -24,6 +24,9 @@ export class NoteCreation extends React.Component {
         if (this.state.note.type === "NoteImg") {
             noteCopy.info.url = value;
         }
+        if (this.state.note.type === "NoteVideo") {
+            noteCopy.info.url = value;
+        }
         if (this.state.note.type === "NoteTodos") {
             var todos = value.split(',')
             var res = todos.map(todo => {
@@ -52,6 +55,10 @@ export class NoteCreation extends React.Component {
             noteCopy.type = "NoteImg"
             this.setState({ note: noteCopy })
         }
+        if (ev.target.name === "NoteVideo") {
+            noteCopy.type = "NoteVideo"
+            this.setState({ note: noteCopy })
+        }
         if (ev.target.name === "NoteTodos") {
             noteCopy.type = "NoteTodos"
             this.setState({ note: noteCopy })
@@ -63,6 +70,9 @@ export class NoteCreation extends React.Component {
             return this.state.note.info.txt
         }
         if (this.state.note.type === "NoteImg") {
+            return this.state.note.info.url
+        }
+        if (this.state.note.type === "NoteVideo") {
             return this.state.note.info.url
         }
         if (this.state.note.type === "NoteTodos") {
@@ -78,6 +88,9 @@ export class NoteCreation extends React.Component {
         }
         if (this.state.note.type === "NoteImg") {
             return "Enter image URL..."
+        }
+        if (this.state.note.type === "NoteVideo") {
+            return "Enter youtube video URL..."
         }
         if (this.state.note.type === "NoteTodos") {
             return "Enter comma separated list..."
@@ -99,6 +112,7 @@ export class NoteCreation extends React.Component {
                 <div className="creator-settings">
                     <button name="NoteText" className="fas text" onClick={this.onChangeNoteType}></button>
                     <button name="NoteImg" className="far img" onClick={this.onChangeNoteType}></button>
+                    <button name="NoteVideo" className="fab video" onClick={this.onChangeNoteType}></button>
                     <button name="NoteTodos" className="fas todo" onClick={this.onChangeNoteType}></button>
                 </div>
             </section>

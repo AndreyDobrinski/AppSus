@@ -7,6 +7,10 @@
     font-family: far;
     src: url(../../../assets/fonts/font-awesome/fa-regular-400.ttf);
 }
+@font-face{
+    font-family: fab;
+    src: url(../../../assets/fonts/font-awesome/fa-brands-400.ttf);
+}
 
 .keep-main {
     margin-top: 145px;
@@ -22,6 +26,13 @@
 }
 .far{
     font-family: far;
+    font-size: larger;
+    background-color: inherit;
+    border: none;
+    outline: none;
+}
+.fab{
+    font-family: fab;
     font-size: larger;
     background-color: inherit;
     border: none;
@@ -115,6 +126,17 @@
     color: darkgrey;
 }
 .far.img:hover{
+    color: grey;
+    cursor: pointer;
+}
+.fab.video::before{
+    content: "";
+    font-size: 1.2rem
+}
+.fab.video {
+    color: darkgrey;
+}
+.fab.video:hover{
     color: grey;
     cursor: pointer;
 }
@@ -259,7 +281,7 @@
     align-items: center;
 }
 .note-creator form {
-    width: 70%;
+    width: 60%;
 }
 .note-creator-inp {
     width: 100%;
@@ -271,7 +293,14 @@
     padding: 10px
 }
 
-
+.video-container {
+    text-align: center;
+    margin: auto;
+    padding-bottom: 5px;
+}
+.video-frame {
+    width: 90%;
+}
 
 @media only screen and (max-width: 990px) {
     .note-creator {
@@ -280,7 +309,7 @@
 }
 @media only screen and (max-width: 770px) {
     .note-creator {
-        width: 50%;
+        width: 60%;
     }
     .note-creator form {
         width: 60%;

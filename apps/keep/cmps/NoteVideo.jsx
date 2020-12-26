@@ -28,19 +28,12 @@ export class NoteVideo extends React.Component {
     render() {
         if (!this.state.note) return <div></div>
         var { backgroundColor } = this.state.note.style;
+        var url = this.state.note.info.url.replace("watch?v=", "embed/");
         return <div className="note" style={{ backgroundColor: backgroundColor }}>
             <input type="text" name="title" value={this.state.note.info.title}
                 onChange={this.handleChange} className="text-img" />
-            {/* <textarea name="title" className="text-img" id="" rows="2" value={this.state.note.info.title} onChange={this.handleChange}></textarea> */}
-
-            <div className="">
-                {/* <img src={`${this.state.note.info.url}`} alt="" /> */}
-                {/* <video width="300" height="150" controls>
-                    <source src={this.state.note.info.url} type="video/mp4" />
-                </video> */}
-        <iframe width="420" height="345" src={`https://www.youtube.com/watch?${this.state.note.info.url}`} ></iframe>
-
-                {/* <iframe width="300" height="150" src={`${this.state.note.info.url}`}></iframe> */}
+            <div className="video-container">
+                <iframe frameborder="0" src={url} className="video-frame"></iframe>
             </div>
             <div className="img-settings">
                 <button className="fas pin" onClick={() => { this.props.onPinNote(this.state.note) }}></button>
@@ -55,4 +48,3 @@ export class NoteVideo extends React.Component {
         </div>
     }
 }
-// value={this.state.note.info.url}
