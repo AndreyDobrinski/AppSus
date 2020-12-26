@@ -137,17 +137,6 @@ function _getDemoNotes() {
                 backgroundColor: util.getRandomColor(1)
             }
         },
-        // {
-        //     type: "NoteVideo",
-        //     info: {
-        //         // url: 'https://www.youtube.com/watch?v=NCtzkaL2t_Y',
-        //         url: 'v=NCtzkaL2t_Y',
-        //         title: ""
-        //     },
-        //     style: {
-        //         backgroundColor: util.getRandomColor(3)
-        //     }
-        // },
         {
             type: "NoteText",
             // isPinned: true,
