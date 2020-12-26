@@ -3,22 +3,17 @@ import { bookServise } from "../services/book-service.js";
 export class BookReview extends React.Component {
   state = {
     book: null,
-    //PROBLEM HERE
     review:{review :'' , score:0}
   };
 
-  //INIT
   componentDidMount() {
     const { bookId } = this.props.match.params;
-    // console.log(bookId);
 
     bookServise.getById(bookId).then((book) => {
-      //   console.log(book);
       this.setState({ book });
       
     });
 
-    console.log('didMount');
   }
 
   goBack = () => {
@@ -27,19 +22,15 @@ export class BookReview extends React.Component {
 
   onSaveBookReview = (ev) => {
     ev.preventDefault();
-    console.log("Review saved!");
 
-    // console.log(this.state.book.score);
 
     if (this.state.book.score < 0 || this.state.book.score === "") {
-      console.log("bad");
       return;
     }
 
     const { bookId } = this.props.match.params;
 
     bookServise.save(this.state.review , bookId ).then((review) => {
-      console.log("review", review);
 
       this.setState({
         book: {
@@ -56,8 +47,7 @@ export class BookReview extends React.Component {
   onInputChange = (ev) => {
     const value =
       ev.target.type === "number" ? +ev.target.value : ev.target.value;
-    // const bookCopy = { ...this.state.book };
-    // bookCopy[ev.target.name] = value;
+
 
     this.setState({
       review: {...this.state.review , [ev.target.name] : value},
@@ -68,12 +58,11 @@ export class BookReview extends React.Component {
     if (!this.state.book) return <h1>Loading..</h1>;
     return (
       <form onSubmit={this.onSaveBookReview} className="review-form">
-        <h1>Reviews</h1>
-        <button onClick={this.goBack}>Go back</button>
-        <h2>Book Name: {this.state.book.title}</h2>
+        <button onClick={this.goBack} className="review-goBack-btn">Go back</button>
+        <h2 className="review-name">Book Name: {this.state.book.title}</h2>
         {this.state.book.reviews && (
-          <div>
-            Book Reviews:{" "}
+          <div className="reviews-name2">
+            <span>Book Reviews:</span> 
             {this.state.book.reviews.map((review, idx) => {
               return (
                 <div key={idx}>
@@ -88,6 +77,7 @@ export class BookReview extends React.Component {
 
         <div className="review-text-area">
           <textarea
+            className="text-area-field"
             name="review"
             cols="50"
             rows="10"
@@ -97,16 +87,19 @@ export class BookReview extends React.Component {
         </div>
 
         <div className="review-input-score">
-          <input
+          <input 
+            className="input-score-field"
             type="number"
-            name="score"
+            name="score: "
             placeholder="Score"
+            min="0"
+            max="10"
             onChange={this.onInputChange}
           />
         </div>
 
         <div className="review-btn-submit">
-          <button type="submit">Add Review</button>
+          <button type="submit" className="review-add-btn">Add Review</button>
         </div>
       </form>
     );

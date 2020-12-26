@@ -69,13 +69,14 @@ last day:
  
 
 Important things left to do :
- 1.ask vika if she can fix the problem with books(when new book is added its not showing up until you click on the other availbe book)
+X 1.ask vika if she can fix the problem with books(when new book is added its not showing up until you click on the other availbe book)
 
 
 
 STUFF FOR TOMARROW:
- 1.Add nice animation to the Welcome 
- 2.make a hover animation for books like vika did
- 3.make the buttons at review look better
- 4.remove confirm from delete
- 5.make books header (my books) look better
+X 1.Add nice animation to the Welcome 
+X 2.make a hover animation for books like vika did
+X 3.make the buttons at review look better
+X 4.remove confirm from delete
+X 5.make books header (my books) look better
+X 6.make inputs on books longer

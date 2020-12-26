@@ -1,5 +1,4 @@
 export function BookPreview({ book, onBookPreview }) {
-  // console.log(book);
   return (
     <article className="book-preview">
       <div className="img-container">

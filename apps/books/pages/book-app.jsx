@@ -2,7 +2,6 @@ import { bookServise } from "../services/book-service.js";
 import { BookAdd } from "../cmps/book-add.jsx";
 import { BookList } from "../cmps/book-list.jsx";
 import { BookFilter } from "../cmps/book-filter.jsx";
-// import {AppHeader} from '../cmps/app-header.jsx'
 
 const {Link } = ReactRouterDOM
 
@@ -25,11 +24,8 @@ export class BookApp extends React.Component {
 
 
   loadBooks = () => {
-    // const books = bookServise.query();
-    // this.setState({ books });
     bookServise.query()
       .then(books=>{
-        console.log(books);
       this.setState({ books });
 
     })
@@ -43,13 +39,11 @@ export class BookApp extends React.Component {
   };
 
   onSetFilter = (filterBy) => {
-    console.log("filterBy", filterBy);
     this.setState({ filterBy });
   };
 
 
   onBookPreview = (book) => {
-    console.log("hi", book);
     this.setState({
       selectedBook : book
     })
@@ -58,7 +52,6 @@ export class BookApp extends React.Component {
 
 
   onCloseModal = () =>{
-    // console.log('bye');
 
     this.setState({
       selectedBook :null
@@ -72,7 +65,6 @@ export class BookApp extends React.Component {
   isLongRead = () =>{
 
     var pageNum = this.state.selectedBook.pageCount
-    // console.log(pageNum);
     var pageLength
 
 
@@ -95,9 +87,7 @@ export class BookApp extends React.Component {
 
   isBookNew = () =>{
     var bookYear = this.state.selectedBook.publishedDate
-    // console.log(bookAge);
     var howManyYears = 2020 - bookYear
-    // console.log(howManyYears);
     var bookAge;
 
     switch (true){
@@ -116,7 +106,6 @@ export class BookApp extends React.Component {
 
   priceCurrency = ()=>{
     var symbolTxt = this.state.selectedBook.listPrice.currencyCode
-    // console.log(symbol);
     var symbol;
 
     switch(symbolTxt){
@@ -146,7 +135,6 @@ export class BookApp extends React.Component {
 
   isOnSale = () =>{
     var isSale = this.state.selectedBook.listPrice.isOnSale
-    // console.log(isSale);
     if (isSale) return 'THE BOOK IS ON SALE!'
   }
 
@@ -155,7 +143,6 @@ export class BookApp extends React.Component {
       
       <section className="book-app">
 
-          {/* <AppHeader/> */}
           <div className="books-inputs">
             <BookFilter setFilter={this.onSetFilter} />
             <BookAdd />

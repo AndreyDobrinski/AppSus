@@ -1,4 +1,4 @@
-import {bookServise} from '../services/book-service'
+import {bookServise} from '../services/book-service.js'
 
 export class BookAdd extends React.Component{
 
@@ -24,15 +24,11 @@ export class BookAdd extends React.Component{
                 booksAPI:books
               })
           })
-
-          console.log(bookServise.getDemoAPIBooks(value));
           
-
     };
 
 
     onBookAdded = (book) =>{
-        console.log(book.id);
         var newBook =  bookServise.searchBook(book.id,this.state.booksAPI)
         bookServise.addBook(newBook)
 

@@ -17,9 +17,6 @@ function _AppHeader (){
                     <li><NavLink to="/mister-email">Email</NavLink></li>
                     <li><NavLink to="/miss-keep">Keep</NavLink></li>
                     <li><NavLink to="/book">Books</NavLink></li>
-
-                    {/* <li><NavLink to="/about">About</NavLink></li> */}
-
                 </ul>
 
         </header>
