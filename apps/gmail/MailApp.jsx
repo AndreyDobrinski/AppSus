@@ -123,7 +123,7 @@ export class MailApp extends React.Component {
 
     render() {
         return (
-            <section>
+            <section className="mail-main">
                 
                 <UserMsg />
                 <EmailFilter setFilter = {this.onSetFilter}/>
