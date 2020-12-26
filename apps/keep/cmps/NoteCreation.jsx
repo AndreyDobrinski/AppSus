@@ -102,9 +102,11 @@ export class NoteCreation extends React.Component {
                     <button type="submit" hidden></button>
                     {/* <button name="Save" className="fas create" onClick={this.onAddNote}></button> */}
                 </form>
-                <button name="NoteText" className="fas text" onClick={this.onChangeNoteType}></button>
-                <button name="NoteImg" className="far img" onClick={this.onChangeNoteType}></button>
-                <button name="NoteTodos" className="fas todo" onClick={this.onChangeNoteType}></button>
+                <div className="creator-settings">
+                    <button name="NoteText" className="fas text" onClick={this.onChangeNoteType}></button>
+                    <button name="NoteImg" className="far img" onClick={this.onChangeNoteType}></button>
+                    <button name="NoteTodos" className="fas todo" onClick={this.onChangeNoteType}></button>
+                </div>
             </section>
         )
     }

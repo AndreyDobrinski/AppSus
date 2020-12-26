@@ -1,4 +1,4 @@
-export class NoteImg extends React.Component {
+export class NoteVideo extends React.Component {
     state = {
         note: null,
         display: 'note-none'
@@ -33,8 +33,12 @@ export class NoteImg extends React.Component {
                 onChange={this.handleChange} className="text-img" />
             {/* <textarea name="title" className="text-img" id="" rows="2" value={this.state.note.info.title} onChange={this.handleChange}></textarea> */}
 
-            <div className="img-container">
-                <img src={`${this.state.note.info.url}`} alt="" />
+            <div className="">
+                {/* <img src={`${this.state.note.info.url}`} alt="" /> */}
+                <video width="300" height="150" controls>
+                    <source src={this.state.note.info.url} type="video/mp4" />
+                </video>
+                {/* <iframe width="300" height="150" src={`${this.state.note.info.url}`}></iframe> */}
             </div>
             <div className="img-settings">
                 <button className="fas pin" onClick={() => { this.props.onPinNote(this.state.note) }}></button>

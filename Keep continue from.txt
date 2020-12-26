@@ -1,14 +1,14 @@
 //////////////// something ///////////////
 CSS:
-<770 filter fix
-<600 notes display
+v <770 filter fix
+v <600 notes display
 
-set default color 
-set default color as random
+v set default color 
+v set default color as random
 
-set bigger DB
+v set bigger DB
 
-Pin fun-ty
+v Pin fun-ty
 search and filter
 video note
 

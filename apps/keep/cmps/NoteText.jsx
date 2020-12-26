@@ -12,7 +12,11 @@ export class NoteText extends React.Component {
     handleChange = (ev) => {
         var value = ev.target.value
         const noteCopy = { ...this.state };
-        noteCopy.note.info.txt = value
+        if (ev.target.name === "backgroundColor") {
+            noteCopy.note.style[ev.target.name] = value
+        } else {
+            noteCopy.note.info.txt = value
+        }
         this.setState(noteCopy)
 
     };
@@ -20,13 +24,15 @@ export class NoteText extends React.Component {
 
     render() {
         if (!this.state.note) return <div></div>
-        return <div className="note">
-            <textarea className="text-text" id="" rows="10" value={this.state.note.info.txt} onChange={this.handleChange}></textarea>
+        var { backgroundColor } = this.state.note.style;
+        return <div className="note" style={{ backgroundColor: backgroundColor }}>
+            <textarea className="text-text" id="" rows="8" value={this.state.note.info.txt} onChange={this.handleChange}></textarea>
             <div className="text-settings">
+                <input type="color" name="backgroundColor" value={this.state.note.style.backgroundColor} onChange={this.handleChange} />
+                <button className="fas pin" onClick={() => { this.props.onPinNote(this.state.note) }}></button>
                 <button className="fas done" onClick={() => { this.props.onUpdateNote(this.state.note) }}></button>
                 <button className="fas delete" onClick={this.props.onDeleteNote}></button>
             </div>
         </div>
-        {/* className="add-note-text" */ }
     }
 }

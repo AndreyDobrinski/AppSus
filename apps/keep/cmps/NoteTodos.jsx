@@ -1,5 +1,3 @@
-import { util } from '../../../services/util.js'
-
 export class NoteTodos extends React.Component {
     state = {
         note: null
@@ -14,10 +12,12 @@ export class NoteTodos extends React.Component {
         var value = ev.target.value
         console.log('ev.target', ev.target.id)
         const noteCopy = { ...this.state };
-        if (ev.target.name !== "todo") {
-            noteCopy.note.info[ev.target.name] = value
-        } else {
+        if (ev.target.name === "todo") {
             noteCopy.note.info.todos[ev.target.id].txt = value
+        } else if (ev.target.name === "backgroundColor") {
+            noteCopy.note.style[ev.target.name] = value
+        } else {
+            noteCopy.note.info[ev.target.name] = value
         }
         this.setState(noteCopy)
     };
@@ -39,9 +39,10 @@ export class NoteTodos extends React.Component {
 
     render() {
         if (!this.state.note) return <div></div>
-        return <div className="note">
-            <input type="text" name="label" value={this.state.note.info.label} 
-            onChange={this.handleChange} className="text-todos"/>
+        var { backgroundColor } = this.state.note.style;
+        return <div className="note" style={{ backgroundColor: backgroundColor }}>
+            <input type="text" name="label" value={this.state.note.info.label}
+                onChange={this.handleChange} className="text-todos" />
             <div className="todos">
                 {this.state.note.info.todos.map((todo, idx) => {
                     return (
@@ -57,6 +58,8 @@ export class NoteTodos extends React.Component {
                 })}
             </div>
             <div className="todo-settings">
+                <input type="color" name="backgroundColor" value={this.state.note.style.backgroundColor} onChange={this.handleChange} />
+                <button className="fas pin" onClick={() => { this.props.onPinNote(this.state.note) }}></button>
                 <button className="fas done" onClick={() => { this.props.onUpdateNote(this.state.note) }}></button>
                 <button className="fas delete" onClick={this.props.onDeleteNote}></button>
             </div>
