@@ -252,7 +252,7 @@
 .note-creator {
     width: 40%;
     margin: 40px auto;
-    background-color: rgb(241, 241, 250);
+    background-color: rgba(255, 255, 255, 0.623);
     padding: 10px;
     display: flex;
     justify-content: center;

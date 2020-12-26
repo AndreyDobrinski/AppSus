@@ -92,26 +92,6 @@ function pinNote(id, note) {
 function _getDemoNotes() {
     const defaultNotes = [
         {
-            type: "NoteText",
-            // isPinned: true,
-            info: {
-                txt: "There are only 10 types of people in the world: Those that understand binary and those that don't."
-            },
-            style: {
-                backgroundColor: util.getRandomColor(0)
-            }
-        },
-        {
-            type: "NoteImg",
-            info: {
-                url: 'https://miro.medium.com/max/630/0*4Dw1NAZsbHG-zIeq.jpg',
-                title: "Don't worry!"
-            },
-            style: {
-                backgroundColor: util.getRandomColor(1)
-            }
-        },
-        {
             type: "NoteTodos",
             info: {
                 label: "Way to success:",
@@ -125,6 +105,26 @@ function _getDemoNotes() {
             },
             style: {
                 backgroundColor: util.getRandomColor(2)
+            }
+        },
+        {
+            type: "NoteImg",
+            info: {
+                url: 'https://miro.medium.com/max/630/0*4Dw1NAZsbHG-zIeq.jpg',
+                title: "Don't worry!"
+            },
+            style: {
+                backgroundColor: util.getRandomColor(1)
+            }
+        },
+        {
+            type: "NoteText",
+            // isPinned: true,
+            info: {
+                txt: "There are only 10 types of people in the world: Those that understand binary and those that don't."
+            },
+            style: {
+                backgroundColor: util.getRandomColor(0)
             }
         },
         {
