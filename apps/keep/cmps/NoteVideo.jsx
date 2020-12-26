@@ -35,9 +35,11 @@ export class NoteVideo extends React.Component {
 
             <div className="">
                 {/* <img src={`${this.state.note.info.url}`} alt="" /> */}
-                <video width="300" height="150" controls>
+                {/* <video width="300" height="150" controls>
                     <source src={this.state.note.info.url} type="video/mp4" />
-                </video>
+                </video> */}
+        <iframe width="420" height="345" src={`https://www.youtube.com/watch?${this.state.note.info.url}`} ></iframe>
+
                 {/* <iframe width="300" height="150" src={`${this.state.note.info.url}`}></iframe> */}
             </div>
             <div className="img-settings">

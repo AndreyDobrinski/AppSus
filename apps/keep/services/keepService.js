@@ -28,15 +28,12 @@ function query() {
 }
 
 function addNote(note) {
-    console.log('note in service', note)
     var noteToAdd
     if (note.type === 'NoteText') {
         noteToAdd = { ...note }
         noteToAdd.style = {
             backgroundColor: util.getRandomColor(0)
         }
-        // noteToAdd.info.txt = note.info.txt
-        console.log('note in service2', note)
     }
     if (note.type === 'NoteImg') {
         noteToAdd = { ...note }
@@ -140,16 +137,17 @@ function _getDemoNotes() {
                 backgroundColor: util.getRandomColor(1)
             }
         },
-        {
-            type: "NoteVideo",
-            info: {
-                url: 'https://www.youtube.com/watch?v=NCtzkaL2t_Y',
-                title: ""
-            },
-            style: {
-                backgroundColor: util.getRandomColor(3)
-            }
-        },
+        // {
+        //     type: "NoteVideo",
+        //     info: {
+        //         // url: 'https://www.youtube.com/watch?v=NCtzkaL2t_Y',
+        //         url: 'v=NCtzkaL2t_Y',
+        //         title: ""
+        //     },
+        //     style: {
+        //         backgroundColor: util.getRandomColor(3)
+        //     }
+        // },
         {
             type: "NoteText",
             // isPinned: true,

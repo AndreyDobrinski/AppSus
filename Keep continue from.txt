@@ -13,8 +13,34 @@ search and filter
 video note
 
 
-set Miss Book
+v set Miss Book
 Hamburger
 
 
 Email 
+
+v Book - added book is displayed
+vide0
+
+--bgc of all - lighter
+
+header- fixed:
+vv  .navigation-color{
+    position: fixed;
+    top: 0;
+}
+!!! .app-about-header{
+    margin-top: 150px;
+}
+!!! gmail > gmail.CSS
+.mail-main {
+    margin-top: 130px
+}
+            > MailApp.jsx
+            section className = "mail-main"
+
+
+ .book-inputs {
+  margin-left: 20px;
+  margin-top: 180px
+}

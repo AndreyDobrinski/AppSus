@@ -1,68 +1,68 @@
-import {bookServise} from '../services/book-service'
+import { bookServise } from '../services/book-service'
 
-export class BookAdd extends React.Component{
+export class BookAdd extends React.Component {
 
 
 
     state = {
-        bookSearch:'',
+        bookSearch: '',
         booksAPI: []
     }
 
 
     onInputChange = (ev) => {
         const value =
-          ev.target.type === "number" ? +ev.target.value : ev.target.value;
+            ev.target.type === "number" ? +ev.target.value : ev.target.value;
 
-          this.setState({
-            bookSearch : value
-          })
-    
-          bookServise.getDemoAPIBooks(value)
-          .then(books =>{
-              this.setState({
-                booksAPI:books
-              })
-          })
+        this.setState({
+            bookSearch: value
+        })
 
-          console.log(bookServise.getDemoAPIBooks(value));
-          
+        bookServise.getDemoAPIBooks(value)
+            .then(books => {
+                this.setState({
+                    booksAPI: books
+                })
+            })
+
+        console.log(bookServise.getDemoAPIBooks(value));
+
 
     };
 
 
-    onBookAdded = (book) =>{
+    onBookAdded = (book) => {
         console.log(book.id);
-        var newBook =  bookServise.searchBook(book.id,this.state.booksAPI)
+        var newBook = bookServise.searchBook(book.id, this.state.booksAPI)
         bookServise.addBook(newBook)
-
+        this.props.onAdding()
 
 
         this.setState({
-            bookSearch : ''
+            bookSearch: ''
         })
     }
 
 
 
 
-    render(){
-        const {booksAPI} = this.state
-        return(
+    render() {
+        const { booksAPI } = this.state
+        return (
             <section>
-                <input type="text" name="name" value={this.state.bookSearch}  placeholder="Add new books"  onChange={this.onInputChange}  className="book-add" list="brow"/>
-         
+                <input type="text" name="name" value={this.state.bookSearch} placeholder="Add new books" onChange={this.onInputChange} className="book-add" list="brow" />
+
 
                 <ul>
-                    {booksAPI.map((book,idx) =>{
-                        if(this.state.bookSearch !== '')
-                        return (
-                            
-                            <li key={idx} className="list-new-books">
-                                {book.volumeInfo.title}
-                                <button className="btn-add-books" onClick={() => {this.onBookAdded(book)}}>+</button>
-                            </li>
-                            
+                    {booksAPI.map((book, idx) => {
+                        if (this.state.bookSearch !== '')
+                            return (
+
+                                <li key={idx} className="list-new-books">
+                                    {book.volumeInfo.title}
+                                    <button className="btn-add-books" onClick={() => { this.onBookAdded(book) }}>+</button>
+                                </li>
+
                             )
                     })}
                 </ul>

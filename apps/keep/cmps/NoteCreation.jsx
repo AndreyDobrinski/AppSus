@@ -17,11 +17,9 @@ export class NoteCreation extends React.Component {
 
         var value = ev.target.value
         const noteCopy = { ...this.state.note };
-        console.log('this.state.type', this.state.note.type)
 
         if (this.state.note.type === "NoteText") {
             noteCopy.info.txt = value;
-            console.log('noteCopy.txt', noteCopy.txt)
         }
         if (this.state.note.type === "NoteImg") {
             noteCopy.info.url = value;
@@ -33,30 +31,26 @@ export class NoteCreation extends React.Component {
             })
             noteCopy.info.todos = res;
         }
-        this.setState({ note: noteCopy }, () => { console.log('after handle', this.state.note) })
+        this.setState({ note: noteCopy })
 
     };
 
     onAddNote = (ev) => {
         ev.preventDefault();
         var copy = { ...this.state.note }
-        console.log('in noteCre to parent', this.state.note)
         this.props.onAddNote(copy);
         this.setState({ note: { type: "NoteText", info: { txt: '', url: '', todos: [''] } } })
-        // this.props.onAddNote(this.state);
     }
 
     onChangeNoteType = (ev) => {
         var noteCopy = { ...this.state.note }
         if (ev.target.name === "NoteText") {
             noteCopy.type = "NoteText"
-            this.setState({ note: noteCopy }, () => { console.log('Set to TEXT', this.state.note) })
-            // console.log('Set to TEXT')
+            this.setState({ note: noteCopy })
         }
         if (ev.target.name === "NoteImg") {
             noteCopy.type = "NoteImg"
-            this.setState({ note: noteCopy }, () => { console.log('Set to IMG', this.state.note) })
-            console.log('Set to IMG')
+            this.setState({ note: noteCopy })
         }
         if (ev.target.name === "NoteTodos") {
             noteCopy.type = "NoteTodos"

@@ -10,7 +10,6 @@ export class NoteImg extends React.Component {
 
     handleChange = (ev) => {
         var value = ev.target.value
-        console.log(value)
         const noteCopy = { ...this.state.note };
         if (ev.target.name !== "backgroundColor") {
             noteCopy.info[ev.target.name] = value
@@ -31,8 +30,6 @@ export class NoteImg extends React.Component {
         return <div className="note" style={{ backgroundColor: backgroundColor }}>
             <input type="text" name="title" value={this.state.note.info.title}
                 onChange={this.handleChange} className="text-img" />
-            {/* <textarea name="title" className="text-img" id="" rows="2" value={this.state.note.info.title} onChange={this.handleChange}></textarea> */}
-
             <div className="img-container">
                 <img src={`${this.state.note.info.url}`} alt="" />
             </div>
@@ -49,4 +46,3 @@ export class NoteImg extends React.Component {
         </div>
     }
 }
-// value={this.state.note.info.url}

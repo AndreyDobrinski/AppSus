@@ -149,6 +149,9 @@ export class BookApp extends React.Component {
     // console.log(isSale);
     if (isSale) return 'THE BOOK IS ON SALE!'
   }
+  onAdding=()=>{
+    this.loadBooks()
+  }
 
   render() {
     return (
@@ -158,7 +161,7 @@ export class BookApp extends React.Component {
           {/* <AppHeader/> */}
           <div className="books-inputs">
             <BookFilter setFilter={this.onSetFilter} />
-            <BookAdd />
+            <BookAdd onAdding={this.onAdding}/>
           </div>
 
 

@@ -5,7 +5,6 @@ export class NoteText extends React.Component {
     }
 
     componentDidMount() {
-        console.log('from props', this.props)
         this.setState({ note: this.props.note })
     }
 

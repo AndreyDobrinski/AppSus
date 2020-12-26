@@ -4,13 +4,11 @@ export class NoteTodos extends React.Component {
     }
 
     componentDidMount() {
-        console.log('from props todos', this.props.note)
         this.setState({ note: this.props.note })
     }
 
     handleChange = (ev) => {
         var value = ev.target.value
-        console.log('ev.target', ev.target.id)
         const noteCopy = { ...this.state };
         if (ev.target.name === "todo") {
             noteCopy.note.info.todos[ev.target.id].txt = value
@@ -24,17 +22,17 @@ export class NoteTodos extends React.Component {
     onUpdStatus = (idx) => {
         const noteCopy = { ...this.state };
         noteCopy.note.info.todos[idx].isDone = !noteCopy.note.info.todos[idx].isDone
-        this.setState(noteCopy, () => { console.log(this.state) })
+        this.setState(noteCopy)
     }
     onDeleteTodo = (idx) => {
         const noteCopy = { ...this.state };
         noteCopy.note.info.todos.splice(idx, 1)
-        this.setState(noteCopy, () => { console.log(this.state) })
+        this.setState(noteCopy)
     }
     onAddTodo = (idx) => {
         const noteCopy = { ...this.state };
         noteCopy.note.info.todos.splice(++idx, 0, { txt: 'To Do', isDone: false })
-        this.setState(noteCopy, () => { console.log(this.state) })
+        this.setState(noteCopy)
     }
 
     render() {

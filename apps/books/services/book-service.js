@@ -80,6 +80,7 @@ function addBook(book) {
   books.unshift(newBook);
   console.log(books);
   console.log(book.volumeInfo.imageLinks.thumbnail);
+  _saveBooksToStorage()
   return books
 }
 

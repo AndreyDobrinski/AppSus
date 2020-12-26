@@ -7,6 +7,10 @@
     font-family: far;
     src: url(../../../assets/fonts/font-awesome/fa-regular-400.ttf);
 }
+
+.keep-main {
+    margin-top: 145px;
+}
   
 /* BUTTONS  */
 .fas{
@@ -145,12 +149,10 @@
     margin: 40px auto;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
-    /* grid-auto-rows: minmax(250px, 1fr); */
     gap: 40px;
 }
 .note {
     background-color: #6494ed;
-    /* width: 100%; */
     height: fit-content;
     display: flex;
     flex-direction: column;
@@ -162,9 +164,6 @@
 }
 .note:hover {
     transform: scale(1.02);
-    /* -webkit-box-shadow: 0px 0px 8px 7px rgba(235,226,235,1);
-    -moz-box-shadow: 0px 0px 8px 7px rgba(235,226,235,1);
-    box-shadow: 0px 0px 8px 7px rgba(235,226,235,1); */
     -webkit-box-shadow: 0px 0px 8px 6px rgba(122,120,122,1);
     -moz-box-shadow: 0px 0px 8px 6px rgba(122,120,122,1);
     box-shadow: 0px 0px 8px 6px rgba(122,120,122,1);
@@ -205,7 +204,6 @@
 }
 .note img {
     width: 100%;
-    /* height: -webkit-fill-available; */
     object-fit: contain;
 }
 .img-settings {
@@ -223,7 +221,6 @@
 }
 
 /* note-todo */
-
 .todo-settings {
     text-align: center;
 }
@@ -252,13 +249,10 @@
 }
 
 /* note-creator */
-
 .note-creator {
     width: 40%;
     margin: 40px auto;
-    /* text-align: center; */
     background-color: rgb(241, 241, 250);
-    /* background-color: #e6e6faba; */
     padding: 10px;
     display: flex;
     justify-content: center;
@@ -293,7 +287,6 @@
     }
     .notes {
         width: 90vw;
-        /* grid-auto-rows: auto; */
     }
 }
 @media only screen and (max-width: 600px) {
