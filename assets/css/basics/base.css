@@ -11,16 +11,12 @@ body {
   margin: 0;
 }
 
-/* header {
-  background-color: lightskyblue;
-  padding: 5px;
-} */
+
 
 li {
   list-style-type: none;
   margin-right: 30px;
-  /* text-decoration: none;
-  color: black; */
+
   
 }
 

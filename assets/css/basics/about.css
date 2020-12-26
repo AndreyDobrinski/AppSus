@@ -72,6 +72,9 @@
     margin-top: 80px;
     font-size: 2.5em;
     color:rgb(78 77 77);
+    animation: fadeInDown;
+    animation-duration: 1.5s; 
+
 }
 
 .app-about-desc1{
@@ -79,12 +82,18 @@
     font-family: roboto;
     text-align: center;
     font-size: 1.5em;
+    animation: fadeInDown;
+    animation-duration: 1.9s;
+
+
 }
 .app-about-desc2{
     color: #7d7b7b;
     font-family: roboto;  
     text-align: center;
     font-size: 1.5em;
+    animation: fadeInDown;
+    animation-duration: 1.9s;
 }
 
 .app-about-desc2 span {
@@ -96,11 +105,15 @@
     text-align: center;
     font-size: 1em;
     margin-bottom: 50px;
+    animation: fadeIn;
+    animation-duration: 2.5s;
 }
 
 .app-about-header{
     border-bottom: 1px solid #80808047;
     margin-bottom: 100px;
+
+
 }
 
 .app-about-svg{

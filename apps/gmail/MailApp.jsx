@@ -20,14 +20,9 @@ export class MailApp extends React.Component {
             subject:'',
             body:''
         },
-        deleteClicked:false,
-        isDelete:false,
-
-
 
     }
 
-    /// INIT
     componentDidMount(){
         this.loadEmail()
 
@@ -38,7 +33,6 @@ export class MailApp extends React.Component {
         this.setState({
             emails
         })
-        // console.log(emails);
     }
 
 
@@ -50,7 +44,6 @@ export class MailApp extends React.Component {
 
     }
     onEmailPreview = (email) =>{
-        console.log('email:' , email);
         this.setState({
             selectedEmail : email
         })
@@ -59,36 +52,15 @@ export class MailApp extends React.Component {
 
 
     onEmailDelete = (email) =>{
-        console.log('deliting email' , email);
-        var areUSure = confirm('Are you sure that you want to delete this Email?')
 
-        if(areUSure){
             var copyEmail = MailService.deleteEmail(email.id)
-            // console.log(copyEmail);
             this.setState({
                 emails : copyEmail
             })
-        }
-        else return
+ 
     }
 
 
-
-    // onEmailDelete = (email) =>{
-    //     this.setState({deleteClicked:true})
-
-    //     var areUSure = this.state.isDelete
-    //     console.log(areUSure);
-
-    //     if(this.state.isDelete){
-    //         var copyEmail = MailService.deleteEmail(email.id)
-    //         this.setState({
-    //             emails : copyEmail,
-
-    //         })
-    //     }
-    //     else return
-    // }
 
     
 
@@ -103,7 +75,6 @@ export class MailApp extends React.Component {
     }
 
       onMakeAnEmail = () =>{
-        console.log('making email');
 
         this.setState({
             comeposClicked: true
@@ -114,18 +85,14 @@ export class MailApp extends React.Component {
 
 
     onSetFilter = (filterBy) => {
-        console.log("filterBy", filterBy);
         this.setState({ filterBy });
       };
     
 
     onSendEmail = (ev) =>{
         ev.preventDefault();
-        ////// nice message of email sent goes here //////////
         eventBusService.emit('addemail' , {type: 'success' , txt: 'Your Email was successfully added!'})
-        ///////////// FUNCTION ADD GOES HERE //////////
         MailService.addEmail(this.state.newEmail).then(email =>{
-            console.log('Email sent!' ,email );
             this.onAdd()
 
 
@@ -153,26 +120,11 @@ export class MailApp extends React.Component {
         })
     }
 
-    // onYesClicked =()=>{
-    //     console.log('YES CLICKED');
-    //     this.setState({
-    //         isDelete : true,
-    //         deleteClicked : false
-
-    //     })
-    // }
-    // onNoClicked =()=>{
-    //     console.log('NO CLICKED');
-    //     this.setState({
-    //         deleteClicked : false
-    //     })
-    // }
 
     render() {
         return (
             <section>
                 
-                {/* <AppHeader /> */}
                 <UserMsg />
                 <EmailFilter setFilter = {this.onSetFilter}/>
                 <section className="email-container">
@@ -223,24 +175,6 @@ export class MailApp extends React.Component {
                     </form>
                     </div>}
 
-                    {/* {this.state.deleteClicked && <div className="modal">
-                        <div className="modal-content">
-                            <div className="modal-header">
-                            <h2>Are you sure you want to delete this Email?</h2>
-                        </div>
-
-                        <div className="modal-body">
-                            <button onClick={()=>this.onYesClicked()}>Yes</button>
-                            <button onClick={()=>this.onNoClicked()}>No</button>
-                        </div>
-
-
-                        </div>
-                        
-
-                        
-                    
-                    </div>} */}
 
 
 

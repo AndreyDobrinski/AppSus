@@ -1,5 +1,3 @@
-import {AppHeader} from '../cmps/App-header.jsx'
-
 
 
 
@@ -12,10 +10,9 @@ export class About extends React.Component {
     render(){
         return(
             <section>
-                {/* <AppHeader/> */}
                 <div className="app-about-header">
-                    <h1 className="app-about-title">Welcome To AppSus</h1>
-                    <p className="app-about-desc1">Now is your chance to try out NEW apps made for AppSus! Life was never so easy as before.</p>
+                    <h1 className="app-about-title ">Welcome To AppSus</h1>
+                    <p className="app-about-desc1 ">Now is your chance to try out NEW apps made for AppSus! Life was never so easy as before.</p>
                     <p className="app-about-desc2">Here are some apps that are available to use <span>Right now!</span></p>
                     <p className="app-about-desc3">More Apps Coming Soon</p>
                 </div>
@@ -68,7 +65,6 @@ export class About extends React.Component {
                             
                             <div className="app-about-leader">
                                 <img className="app-creators-img" src="./assets/img/rami-face.jpg" alt=""/>
-                                {/* <img className="app-creators-img" src={require('../assets/img/rami-face.jpg')} alt=""/> */}
                                                                        
                                 <p className="app-about-txt1">Rami Davidov</p>
                                 <p className="app-about-txt2">"Supreme Leader"</p>

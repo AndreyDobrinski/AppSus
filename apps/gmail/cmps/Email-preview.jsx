@@ -11,7 +11,6 @@ export function EmailPreview ({email , onEmailPreview , onEmailDelete}){
                     <button className="fas star"></button>
                     <button className="fas viewfull"  onClick={()=>onEmailPreview(email)}></button>
                     <button className="fas delete" onClick={()=>onEmailDelete(email)}></button>
-                    {/* <button className="fab facebook"></button> */}
                 </div>
 
             </h1>
